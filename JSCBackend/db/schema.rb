@@ -64,10 +64,6 @@ ActiveRecord::Schema.define(version: 2020_11_19_205314) do
     t.integer "interest_level"
     t.integer "user_id"
     t.integer "company_id"
-    t.integer "contact_id"
-    t.integer "follow_up_id"
-    t.integer "interview_id"
-    t.integer "job_contact_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

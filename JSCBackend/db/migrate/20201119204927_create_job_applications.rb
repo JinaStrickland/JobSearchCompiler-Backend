@@ -12,10 +12,6 @@ class CreateJobApplications < ActiveRecord::Migration[6.0]
       t.integer :interest_level
       t.integer :user_id
       t.integer :company_id
-      t.integer :contact_id
-      t.integer :follow_up_id
-      t.integer :interview_id
-      t.integer :job_contact_id
 
       t.timestamps
     end

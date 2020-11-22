@@ -85,3 +85,371 @@ Migrating to CreateJobContacts (20201119205314)
   [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6785540128866158835)[0m
   [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mFollowUp Load (1.6ms)[0m  [1m[34mSELECT "follow_ups".* FROM "follow_ups" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (30.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6785540128866158835)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(6785540128866158835)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mCompany Load (27.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  [1m[36mJobApplication Load (27.6ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications"[0m
+  [1m[36mContact Load (2.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mJobContact Load (2.9ms)[0m  [1m[34mSELECT "job_contacts".* FROM "job_contacts"[0m
+  [1m[36mFollowUp Load (3.4ms)[0m  [1m[34mSELECT "follow_ups".* FROM "follow_ups"[0m
+  [1m[36mInterview Load (3.7ms)[0m  [1m[34mSELECT "interviews".* FROM "interviews"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mCompany Load (16.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  [1m[36mJobApplication Load (3.9ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications"[0m
+  [1m[36mContact Load (22.8ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mJobContact Load (25.8ms)[0m  [1m[34mSELECT "job_contacts".* FROM "job_contacts"[0m
+  [1m[36mFollowUp Load (0.6ms)[0m  [1m[34mSELECT "follow_ups".* FROM "follow_ups"[0m
+  [1m[36mInterview Load (0.5ms)[0m  [1m[34mSELECT "interviews".* FROM "interviews"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (38.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Jina"], ["last_name", "Smith"], ["email", "jina@email.com"], ["password_digest", "jina"], ["image", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTAf_DARs3j-x3klIyxyDanfMFShffMn0LrCw&usqp=CAU"], ["created_at", "2020-11-22 19:44:52.760704"], ["updated_at", "2020-11-22 19:44:52.760704"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (1.9ms)[0m  [1m[32mINSERT INTO "companies" ("name", "street_address", "city", "state", "zipcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "CodeOverFlow"], ["street_address", "2000 S Street, NW"], ["city", "Washington"], ["state", "DC"], ["zipcode", 20036], ["created_at", "2020-11-22 19:44:52.814648"], ["updated_at", "2020-11-22 19:44:52.814648"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (9.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "street_address", "city", "state", "zipcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Flaron"], ["street_address", "111 Tron Street, NW"], ["city", "Washington"], ["state", "DC"], ["zipcode", 20005], ["created_at", "2020-11-22 19:44:52.838531"], ["updated_at", "2020-11-22 19:44:52.838531"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (19.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mContact Create (1.1ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "email", "title", "phone", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Doe"], ["email", "john@email.com"], ["title", "HR Manager"], ["phone", "202-859-2727"], ["company_id", 1], ["created_at", "2020-11-22 19:44:52.902817"], ["updated_at", "2020-11-22 19:44:52.902817"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mContact Create (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "email", "title", "phone", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Anna"], ["last_name", "Lee"], ["email", "anna@email.com"], ["title", "Project Manager"], ["phone", "202-859-2828"], ["company_id", 1], ["created_at", "2020-11-22 19:44:52.910204"], ["updated_at", "2020-11-22 19:44:52.910204"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mContact Create (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "email", "title", "phone", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Rick"], ["last_name", "Slon"], ["email", "rick@email.com"], ["title", "HR Manager"], ["phone", "202-221-4321"], ["company_id", 2], ["created_at", "2020-11-22 19:44:52.918273"], ["updated_at", "2020-11-22 19:44:52.918273"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (25.0ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "email", "title", "phone", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Larry"], ["last_name", "Beek"], ["email", "larry@email.com"], ["title", "Senior Engineer"], ["phone", "202-221-1111"], ["company_id", 2], ["created_at", "2020-11-22 19:44:52.949477"], ["updated_at", "2020-11-22 19:44:52.949477"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6785540128866158835)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateJobContacts (20201119205314)
+  [1m[35m (22.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.5ms)[0m  [1m[35mDROP TABLE "job_contacts"[0m
+  [1m[36mprimary::SchemaMigration Destroy (26.8ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20201119205314"]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6785540128866158835)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6785540128866158835)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateJobApplications (20201119204927)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE "job_applications"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20201119204927"]]
+  [1m[35m (28.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6785540128866158835)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6785540128866158835)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateJobApplications (20201119204927)
+  [1m[35m (21.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (70.2ms)[0m  [1m[35mCREATE TABLE "job_applications" ("id" bigserial primary key, "communication_type" character varying, "resume_sent" date, "resume" character varying, "cover_letter" character varying, "status" character varying, "notes" text, "applied_location" character varying, "application_name" character varying, "interest_level" integer, "user_id" integer, "company_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201119204927"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateJobContacts (20201119205314)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "job_contacts" ("id" bigserial primary key, "job_application_id" integer, "contact_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201119205314"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(6785540128866158835)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (17.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJobApplication Destroy (1.0ms)[0m  [1m[31mDELETE FROM "job_applications" WHERE "job_applications"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  [1m[35m (14.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Destroy (0.5ms)[0m  [1m[31mDELETE FROM "contacts" WHERE "contacts"."company_id" = $1[0m  [["company_id", 1]]
+  [1m[36mCompany Destroy (0.2ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Destroy (0.3ms)[0m  [1m[31mDELETE FROM "contacts" WHERE "contacts"."company_id" = $1[0m  [["company_id", 2]]
+  [1m[36mCompany Destroy (0.3ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mJobApplication Load (0.3ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications"[0m
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mJobContact Load (3.4ms)[0m  [1m[34mSELECT "job_contacts".* FROM "job_contacts"[0m
+  [1m[36mFollowUp Load (0.8ms)[0m  [1m[34mSELECT "follow_ups".* FROM "follow_ups"[0m
+  [1m[36mInterview Load (0.5ms)[0m  [1m[34mSELECT "interviews".* FROM "interviews"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Jina"], ["last_name", "Smith"], ["email", "jina@email.com"], ["password_digest", "jina"], ["image", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTAf_DARs3j-x3klIyxyDanfMFShffMn0LrCw&usqp=CAU"], ["created_at", "2020-11-22 19:50:38.464560"], ["updated_at", "2020-11-22 19:50:38.464560"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (0.8ms)[0m  [1m[32mINSERT INTO "companies" ("name", "street_address", "city", "state", "zipcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "CodeOverFlow"], ["street_address", "2000 S Street, NW"], ["city", "Washington"], ["state", "DC"], ["zipcode", 20036], ["created_at", "2020-11-22 19:50:38.469940"], ["updated_at", "2020-11-22 19:50:38.469940"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "street_address", "city", "state", "zipcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Flaron"], ["street_address", "111 Tron Street, NW"], ["city", "Washington"], ["state", "DC"], ["zipcode", 20005], ["created_at", "2020-11-22 19:50:38.478016"], ["updated_at", "2020-11-22 19:50:38.478016"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (13.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mContact Create (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "email", "title", "phone", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Doe"], ["email", "john@email.com"], ["title", "HR Manager"], ["phone", "202-859-2727"], ["company_id", 3], ["created_at", "2020-11-22 19:50:38.510468"], ["updated_at", "2020-11-22 19:50:38.510468"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mContact Create (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "email", "title", "phone", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Anna"], ["last_name", "Lee"], ["email", "anna@email.com"], ["title", "Project Manager"], ["phone", "202-859-2828"], ["company_id", 3], ["created_at", "2020-11-22 19:50:38.517769"], ["updated_at", "2020-11-22 19:50:38.517769"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "email", "title", "phone", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Rick"], ["last_name", "Slon"], ["email", "rick@email.com"], ["title", "HR Manager"], ["phone", "202-221-4321"], ["company_id", 4], ["created_at", "2020-11-22 19:50:38.524550"], ["updated_at", "2020-11-22 19:50:38.524550"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "email", "title", "phone", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Larry"], ["last_name", "Beek"], ["email", "larry@email.com"], ["title", "Senior Engineer"], ["phone", "202-221-1111"], ["company_id", 4], ["created_at", "2020-11-22 19:50:38.530685"], ["updated_at", "2020-11-22 19:50:38.530685"]]
+  [1m[35m (24.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (5.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (14.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJobApplication Destroy (0.6ms)[0m  [1m[31mDELETE FROM "job_applications" WHERE "job_applications"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCompany Load (0.8ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  [1m[35m (14.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Destroy (0.4ms)[0m  [1m[31mDELETE FROM "contacts" WHERE "contacts"."company_id" = $1[0m  [["company_id", 3]]
+  [1m[36mCompany Destroy (0.2ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Destroy (0.3ms)[0m  [1m[31mDELETE FROM "contacts" WHERE "contacts"."company_id" = $1[0m  [["company_id", 4]]
+  [1m[36mCompany Destroy (0.2ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = $1[0m  [["id", 4]]
+  [1m[35m (16.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mJobApplication Load (0.4ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications"[0m
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mJobContact Load (0.5ms)[0m  [1m[34mSELECT "job_contacts".* FROM "job_contacts"[0m
+  [1m[36mFollowUp Load (2.1ms)[0m  [1m[34mSELECT "follow_ups".* FROM "follow_ups"[0m
+  [1m[36mInterview Load (1.0ms)[0m  [1m[34mSELECT "interviews".* FROM "interviews"[0m
+  [1m[35m (22.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (2.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Jina"], ["last_name", "Smith"], ["email", "jina@email.com"], ["password_digest", "jina"], ["image", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTAf_DARs3j-x3klIyxyDanfMFShffMn0LrCw&usqp=CAU"], ["created_at", "2020-11-22 19:51:43.835295"], ["updated_at", "2020-11-22 19:51:43.835295"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (0.6ms)[0m  [1m[32mINSERT INTO "companies" ("name", "street_address", "city", "state", "zipcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "CodeOverFlow"], ["street_address", "2000 S Street, NW"], ["city", "Washington"], ["state", "DC"], ["zipcode", 20036], ["created_at", "2020-11-22 19:51:43.869702"], ["updated_at", "2020-11-22 19:51:43.869702"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (24.9ms)[0m  [1m[32mINSERT INTO "companies" ("name", "street_address", "city", "state", "zipcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Flaron"], ["street_address", "111 Tron Street, NW"], ["city", "Washington"], ["state", "DC"], ["zipcode", 20005], ["created_at", "2020-11-22 19:51:43.880669"], ["updated_at", "2020-11-22 19:51:43.880669"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mContact Create (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "email", "title", "phone", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Doe"], ["email", "john@email.com"], ["title", "HR Manager"], ["phone", "202-859-2727"], ["company_id", 5], ["created_at", "2020-11-22 19:51:43.929307"], ["updated_at", "2020-11-22 19:51:43.929307"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (22.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mContact Create (0.6ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "email", "title", "phone", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Anna"], ["last_name", "Lee"], ["email", "anna@email.com"], ["title", "Project Manager"], ["phone", "202-859-2828"], ["company_id", 5], ["created_at", "2020-11-22 19:51:43.962510"], ["updated_at", "2020-11-22 19:51:43.962510"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (20.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJobApplication Destroy (0.5ms)[0m  [1m[31mDELETE FROM "job_applications" WHERE "job_applications"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  [1m[35m (15.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Destroy (1.7ms)[0m  [1m[31mDELETE FROM "contacts" WHERE "contacts"."company_id" = $1[0m  [["company_id", 5]]
+  [1m[36mCompany Destroy (0.3ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Destroy (0.2ms)[0m  [1m[31mDELETE FROM "contacts" WHERE "contacts"."company_id" = $1[0m  [["company_id", 6]]
+  [1m[36mCompany Destroy (0.2ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mJobApplication Load (0.2ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications"[0m
+  [1m[36mJobContact Load (0.5ms)[0m  [1m[34mSELECT "job_contacts".* FROM "job_contacts"[0m
+  [1m[36mFollowUp Load (25.1ms)[0m  [1m[34mSELECT "follow_ups".* FROM "follow_ups"[0m
+  [1m[36mInterview Load (0.5ms)[0m  [1m[34mSELECT "interviews".* FROM "interviews"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  [1m[36mContact Load (21.6ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mJobApplication Load (0.6ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications"[0m
+  [1m[36mJobContact Load (0.5ms)[0m  [1m[34mSELECT "job_contacts".* FROM "job_contacts"[0m
+  [1m[36mFollowUp Load (0.8ms)[0m  [1m[34mSELECT "follow_ups".* FROM "follow_ups"[0m
+  [1m[36mInterview Load (0.5ms)[0m  [1m[34mSELECT "interviews".* FROM "interviews"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Jina"], ["last_name", "Smith"], ["email", "jina@email.com"], ["password_digest", "jina"], ["image", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTAf_DARs3j-x3klIyxyDanfMFShffMn0LrCw&usqp=CAU"], ["created_at", "2020-11-22 20:04:54.996200"], ["updated_at", "2020-11-22 20:04:54.996200"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (19.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (1.1ms)[0m  [1m[32mINSERT INTO "companies" ("name", "street_address", "city", "state", "zipcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "CodeOverFlow"], ["street_address", "2000 S Street, NW"], ["city", "Washington"], ["state", "DC"], ["zipcode", 20036], ["created_at", "2020-11-22 20:04:55.010577"], ["updated_at", "2020-11-22 20:04:55.010577"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (0.4ms)[0m  [1m[32mINSERT INTO "companies" ("name", "street_address", "city", "state", "zipcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Amazin"], ["street_address", "900 Owen Boulevard"], ["city", "Arlington"], ["state", "VA"], ["zipcode", 22202], ["created_at", "2020-11-22 20:04:55.039694"], ["updated_at", "2020-11-22 20:04:55.039694"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (7.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mContact Create (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "email", "title", "phone", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Doe"], ["email", "john@email.com"], ["title", "HR Manager"], ["phone", "202-859-2727"], ["company_id", 7], ["created_at", "2020-11-22 20:04:55.085886"], ["updated_at", "2020-11-22 20:04:55.085886"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mContact Create (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "email", "title", "phone", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Anna"], ["last_name", "Lee"], ["email", "anna@email.com"], ["title", "Project Manager"], ["phone", "202-859-2828"], ["company_id", 7], ["created_at", "2020-11-22 20:04:55.096822"], ["updated_at", "2020-11-22 20:04:55.096822"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (25.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mContact Create (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "email", "title", "phone", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Rick"], ["last_name", "Slon"], ["email", "rick@email.com"], ["title", "HR Manager"], ["phone", "202-221-4321"], ["company_id", 8], ["created_at", "2020-11-22 20:04:55.135761"], ["updated_at", "2020-11-22 20:04:55.135761"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mContact Create (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "email", "title", "phone", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Larry"], ["last_name", "Beek"], ["email", "larry@email.com"], ["title", "Senior Engineer"], ["phone", "202-221-1111"], ["company_id", 8], ["created_at", "2020-11-22 20:04:55.148768"], ["updated_at", "2020-11-22 20:04:55.148768"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mJobApplication Create (1.6ms)[0m  [1m[32mINSERT INTO "job_applications" ("communication_type", "resume_sent", "resume", "cover_letter", "status", "notes", "applied_location", "application_name", "interest_level", "user_id", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["communication_type", "Email"], ["resume_sent", "2020-11-19"], ["resume", ""], ["cover_letter", ""], ["status", "Interview Scheduled"], ["notes", "Had a good conversation with John. Work enviroment sounds nice and type of work they do seem very interesting."], ["applied_location", "CodeOverFlow website"], ["application_name", "CodeOverFlow Entry Level SE"], ["interest_level", 5], ["user_id", 4], ["company_id", 7], ["created_at", "2020-11-22 20:04:55.235089"], ["updated_at", "2020-11-22 20:04:55.235089"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mJobApplication Create (0.3ms)[0m  [1m[32mINSERT INTO "job_applications" ("communication_type", "resume_sent", "resume", "cover_letter", "status", "notes", "applied_location", "application_name", "interest_level", "user_id", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["communication_type", "Email"], ["resume_sent", "2020-11-30"], ["resume", ""], ["cover_letter", ""], ["status", "Sent Resume"], ["notes", "It seems I can do different things, opportunities, once I'm in the company. A potential growth opportunities. They have offices throught out the US."], ["applied_location", "Amazin website"], ["application_name", "Amazin Web Developer"], ["interest_level", 5], ["user_id", 4], ["company_id", 8], ["created_at", "2020-11-22 20:04:55.245361"], ["updated_at", "2020-11-22 20:04:55.245361"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (22.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJobApplication Load (0.3ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mJobContact Create (0.6ms)[0m  [1m[32mINSERT INTO "job_contacts" ("job_application_id", "contact_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["job_application_id", 1], ["contact_id", 11], ["created_at", "2020-11-22 20:04:55.285787"], ["updated_at", "2020-11-22 20:04:55.285787"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJobApplication Load (0.4ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mJobContact Create (0.3ms)[0m  [1m[32mINSERT INTO "job_contacts" ("job_application_id", "contact_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["job_application_id", 1], ["contact_id", 12], ["created_at", "2020-11-22 20:04:55.295932"], ["updated_at", "2020-11-22 20:04:55.295932"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJobApplication Load (0.3ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mJobContact Create (25.4ms)[0m  [1m[32mINSERT INTO "job_contacts" ("job_application_id", "contact_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["job_application_id", 2], ["contact_id", 13], ["created_at", "2020-11-22 20:04:55.304223"], ["updated_at", "2020-11-22 20:04:55.304223"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJobApplication Load (0.3ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mJobContact Create (0.3ms)[0m  [1m[32mINSERT INTO "job_contacts" ("job_application_id", "contact_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["job_application_id", 2], ["contact_id", 14], ["created_at", "2020-11-22 20:04:55.339325"], ["updated_at", "2020-11-22 20:04:55.339325"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (19.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJobApplication Destroy (2.0ms)[0m  [1m[31mDELETE FROM "job_applications" WHERE "job_applications"."user_id" = $1[0m  [["user_id", 4]]
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  [1m[35m (11.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Destroy (0.5ms)[0m  [1m[31mDELETE FROM "contacts" WHERE "contacts"."company_id" = $1[0m  [["company_id", 7]]
+  [1m[36mCompany Destroy (0.3ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Destroy (0.5ms)[0m  [1m[31mDELETE FROM "contacts" WHERE "contacts"."company_id" = $1[0m  [["company_id", 8]]
+  [1m[36mCompany Destroy (0.2ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = $1[0m  [["id", 8]]
+  [1m[35m (14.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mContact Load (1.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mJobApplication Load (0.3ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications"[0m
+  [1m[36mJobContact Load (0.6ms)[0m  [1m[34mSELECT "job_contacts".* FROM "job_contacts"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJobContact Destroy (26.6ms)[0m  [1m[31mDELETE FROM "job_contacts" WHERE "job_contacts"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJobContact Destroy (0.3ms)[0m  [1m[31mDELETE FROM "job_contacts" WHERE "job_contacts"."id" = $1[0m  [["id", 2]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJobContact Destroy (0.3ms)[0m  [1m[31mDELETE FROM "job_contacts" WHERE "job_contacts"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJobContact Destroy (0.3ms)[0m  [1m[31mDELETE FROM "job_contacts" WHERE "job_contacts"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mFollowUp Load (26.5ms)[0m  [1m[34mSELECT "follow_ups".* FROM "follow_ups"[0m
+  [1m[36mInterview Load (6.6ms)[0m  [1m[34mSELECT "interviews".* FROM "interviews"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Jina"], ["last_name", "Smith"], ["email", "jina@email.com"], ["password_digest", "jina"], ["image", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTAf_DARs3j-x3klIyxyDanfMFShffMn0LrCw&usqp=CAU"], ["created_at", "2020-11-22 20:06:22.248701"], ["updated_at", "2020-11-22 20:06:22.248701"]]
+  [1m[35m (25.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (0.4ms)[0m  [1m[32mINSERT INTO "companies" ("name", "street_address", "city", "state", "zipcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "CodeOverFlow"], ["street_address", "2000 S Street, NW"], ["city", "Washington"], ["state", "DC"], ["zipcode", 20036], ["created_at", "2020-11-22 20:06:22.283420"], ["updated_at", "2020-11-22 20:06:22.283420"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (23.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "street_address", "city", "state", "zipcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Amazin"], ["street_address", "900 Owen Boulevard"], ["city", "Arlington"], ["state", "VA"], ["zipcode", 22202], ["created_at", "2020-11-22 20:06:22.307423"], ["updated_at", "2020-11-22 20:06:22.307423"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (20.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mContact Create (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "email", "title", "phone", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Doe"], ["email", "john@email.com"], ["title", "HR Manager"], ["phone", "202-859-2727"], ["company_id", 9], ["created_at", "2020-11-22 20:06:22.390772"], ["updated_at", "2020-11-22 20:06:22.390772"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (25.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mContact Create (0.9ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "email", "title", "phone", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Anna"], ["last_name", "Lee"], ["email", "anna@email.com"], ["title", "Project Manager"], ["phone", "202-859-2828"], ["company_id", 9], ["created_at", "2020-11-22 20:06:22.439181"], ["updated_at", "2020-11-22 20:06:22.439181"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mContact Create (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "email", "title", "phone", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Rick"], ["last_name", "Slon"], ["email", "rick@email.com"], ["title", "HR Manager"], ["phone", "202-221-4321"], ["company_id", 10], ["created_at", "2020-11-22 20:06:22.451350"], ["updated_at", "2020-11-22 20:06:22.451350"]]
+  [1m[35m (31.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (16.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mContact Create (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "email", "title", "phone", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Larry"], ["last_name", "Beek"], ["email", "larry@email.com"], ["title", "Senior Engineer"], ["phone", "202-221-1111"], ["company_id", 10], ["created_at", "2020-11-22 20:06:22.692490"], ["updated_at", "2020-11-22 20:06:22.692490"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (25.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCompany Load (2.8ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mJobApplication Create (1.4ms)[0m  [1m[32mINSERT INTO "job_applications" ("communication_type", "resume_sent", "resume", "cover_letter", "status", "notes", "applied_location", "application_name", "interest_level", "user_id", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["communication_type", "Email"], ["resume_sent", "2020-11-19"], ["resume", ""], ["cover_letter", ""], ["status", "Interview Scheduled"], ["notes", "Had a good conversation with John. Work enviroment sounds nice and type of work they do seem very interesting."], ["applied_location", "CodeOverFlow website"], ["application_name", "CodeOverFlow Entry Level SE"], ["interest_level", 5], ["user_id", 5], ["company_id", 9], ["created_at", "2020-11-22 20:06:22.801633"], ["updated_at", "2020-11-22 20:06:22.801633"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (23.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mJobApplication Create (0.3ms)[0m  [1m[32mINSERT INTO "job_applications" ("communication_type", "resume_sent", "resume", "cover_letter", "status", "notes", "applied_location", "application_name", "interest_level", "user_id", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["communication_type", "Email"], ["resume_sent", "2020-11-30"], ["resume", ""], ["cover_letter", ""], ["status", "Sent Resume"], ["notes", "It seems I can do different things, opportunities, once I'm in the company. A potential growth opportunities. They have offices throught out the US."], ["applied_location", "Amazin website"], ["application_name", "Amazin Web Developer"], ["interest_level", 5], ["user_id", 5], ["company_id", 10], ["created_at", "2020-11-22 20:06:22.836560"], ["updated_at", "2020-11-22 20:06:22.836560"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJobApplication Load (0.2ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mJobContact Create (0.5ms)[0m  [1m[32mINSERT INTO "job_contacts" ("job_application_id", "contact_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["job_application_id", 3], ["contact_id", 15], ["created_at", "2020-11-22 20:06:22.848276"], ["updated_at", "2020-11-22 20:06:22.848276"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJobApplication Load (0.3ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mJobContact Create (25.0ms)[0m  [1m[32mINSERT INTO "job_contacts" ("job_application_id", "contact_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["job_application_id", 3], ["contact_id", 16], ["created_at", "2020-11-22 20:06:22.856867"], ["updated_at", "2020-11-22 20:06:22.856867"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJobApplication Load (0.3ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mJobContact Create (0.3ms)[0m  [1m[32mINSERT INTO "job_contacts" ("job_application_id", "contact_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["job_application_id", 4], ["contact_id", 17], ["created_at", "2020-11-22 20:06:22.891057"], ["updated_at", "2020-11-22 20:06:22.891057"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJobApplication Load (0.3ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mJobContact Create (0.3ms)[0m  [1m[32mINSERT INTO "job_contacts" ("job_application_id", "contact_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["job_application_id", 4], ["contact_id", 18], ["created_at", "2020-11-22 20:06:22.899208"], ["updated_at", "2020-11-22 20:06:22.899208"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (20.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJobApplication Load (0.3ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFollowUp Create (2.7ms)[0m  [1m[32mINSERT INTO "follow_ups" ("follow_up_date", "contact_type", "job_application_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["follow_up_date", "2020-12-02"], ["contact_type", "Email"], ["job_application_id", 3], ["created_at", "2020-11-22 20:06:22.935416"], ["updated_at", "2020-11-22 20:06:22.935416"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJobApplication Load (0.2ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mFollowUp Create (26.5ms)[0m  [1m[32mINSERT INTO "follow_ups" ("follow_up_date", "contact_type", "job_application_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["follow_up_date", "2020-12-01"], ["contact_type", "Phone"], ["job_application_id", 4], ["created_at", "2020-11-22 20:06:22.955918"], ["updated_at", "2020-11-22 20:06:22.955918"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJobApplication Load (0.2ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mFollowUp Create (1.5ms)[0m  [1m[32mINSERT INTO "follow_ups" ("follow_up_date", "contact_type", "job_application_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["follow_up_date", "2020-12-15"], ["contact_type", ""], ["job_application_id", 4], ["created_at", "2020-11-22 20:06:22.991768"], ["updated_at", "2020-11-22 20:06:22.991768"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mJobApplication Load (25.2ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mInterview Create (2.5ms)[0m  [1m[32mINSERT INTO "interviews" ("interview_date", "information", "job_application_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["interview_date", "2021-01-05 00:00:00"], ["information", "Video interview at 2pm with John(HR) and Anna(PM). John will send the call info"], ["job_application_id", 3], ["created_at", "2020-11-22 20:06:23.033477"], ["updated_at", "2020-11-22 20:06:23.033477"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mJobContact Load (0.5ms)[0m  [1m[34mSELECT "job_contacts".* FROM "job_contacts" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mJobApplication Load (0.5ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mInterview Load (0.6ms)[0m  [1m[34mSELECT "interviews".* FROM "interviews" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mFollowUp Load (0.8ms)[0m  [1m[34mSELECT "follow_ups".* FROM "follow_ups" LIMIT $1[0m  [["LIMIT", 11]]
