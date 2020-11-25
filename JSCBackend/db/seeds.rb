@@ -17,13 +17,13 @@ u1 = User.create(
     password_digest: "jina",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTAf_DARs3j-x3klIyxyDanfMFShffMn0LrCw&usqp=CAU",
 )
-# u2 = User.create(
-#     first_name: "Suzy",
-#     last_name: "Williams",
-#     email: "suzy@email.com",
-#     password_digest: "suzy",
-#     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTujUAbrUr4nk7BtPYpfy4llFW03uxz0bCTqg&usqp=CAU",
-# )
+u2 = User.create(
+    first_name: "Suzy",
+    last_name: "Williams",
+    email: "suzy@email.com",
+    password_digest: "suzy",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTujUAbrUr4nk7BtPYpfy4llFW03uxz0bCTqg&usqp=CAU",
+)
 
 
 codeoverflow = Company.create(
@@ -40,20 +40,20 @@ amazn = Company.create(
     state: "VA",
     zipcode: 22202
 )
-# flaron = Company.create(
-#     name: "Flaron",
-#     street_address: "111 Tron Street, NW",
-#     city: "Washington",
-#     state: "DC",
-#     zipcode: 20005
-# )
-# recruit = Company.create(
-#     name: "Recruit",
-#     street_address: "321 Best Avenue",
-#     city: "Fairfax",
-#     state: "VA",
-#     zipcode: 22033
-# )
+flaron = Company.create(
+    name: "Flaron",
+    street_address: "111 Tron Street, NW",
+    city: "Washington",
+    state: "DC",
+    zipcode: 20005
+)
+recruit = Company.create(
+    name: "Recruit",
+    street_address: "321 Best Avenue",
+    city: "Fairfax",
+    state: "VA",
+    zipcode: 22033
+)
 
 
 c1 = Contact.create(
@@ -88,22 +88,22 @@ c4 = Contact.create(
     phone: "202-221-1111",
     company_id: amazn.id
 )
-# c5 = Contact.create(
-#     first_name: "Bob",
-#     last_name: "Jones",
-#     email: "bob@email.com",
-#     title: "HR Manager",
-#     phone: "703-703-4567",
-#     company_id: flaron.id
-# )
-# c6 = Contact.create(
-#     first_name: "Rebecca",
-#     last_name: "Lee",
-#     email: "rebecca@email.com",
-#     title: "Sr HR Manager / VP",
-#     phone: "703-777-3333",
-#     company_id: recruit.id
-# )
+c5 = Contact.create(
+    first_name: "Bob",
+    last_name: "Jones",
+    email: "bob@email.com",
+    title: "HR Manager",
+    phone: "703-703-4567",
+    company_id: flaron.id
+)
+c6 = Contact.create(
+    first_name: "Rebecca",
+    last_name: "Lee",
+    email: "rebecca@email.com",
+    title: "Sr HR Manager / VP",
+    phone: "703-777-3333",
+    company_id: recruit.id
+)
 
 
 ja1 = JobApplication.create(
@@ -132,32 +132,32 @@ ja2 = JobApplication.create(
     user_id: u1.id,
     company_id: amazn.id
 )
-# ja3 = JobApplication.create(
-#     communication_type: "#{comm_type[0]}",
-#     resume_sent: Date.parse("November 20 2020"),
-#     resume: "",
-#     cover_letter: "",
-#     status: "#{status[0]}",
-#     notes: "This is a coaching position for SE program. They are looking for 2 people by end of the year.",
-#     application_name: "#{flaron.name} SE Coach",
-#     applied_location: "#{flaron.name} website",
-#     interest_level: 3,
-#     user_id: u1.id,
-#     company_id: flaron.id,
-# )
-# ja4 = JobApplication.create(
-#     communication_type: "#{comm_type[0]}",
-#     resume_sent: Date.parse("December 4 2020"),
-#     resume: "",
-#     cover_letter: "",
-#     status: "#{status[1]}",
-#     notes: "#{c1.first_name} contacted me for possible web development position in DC and in Arlington. Found me through LinkedIn.",
-#     application_name: "#{recruit.name}",
-#     applied_location: "#{comm_type[0]} it to her directly",
-#     interest_level: 3,
-#     user_id: u1.id,
-#     company_id: recruit.id,
-# )
+ja3 = JobApplication.create(
+    communication_type: "#{comm_type[0]}",
+    resume_sent: Date.parse("November 20 2020"),
+    resume: "",
+    cover_letter: "",
+    status: "#{status[0]}",
+    notes: "This is a coaching position for SE program. They are looking for 2 people by end of the year.",
+    application_name: "#{flaron.name} SE Coach",
+    applied_location: "#{flaron.name} website",
+    interest_level: 3,
+    user_id: u1.id,
+    company_id: flaron.id,
+)
+ja4 = JobApplication.create(
+    communication_type: "#{comm_type[0]}",
+    resume_sent: Date.parse("December 4 2020"),
+    resume: "",
+    cover_letter: "",
+    status: "#{status[1]}",
+    notes: "#{c1.first_name} contacted me for possible web development position in DC and in Arlington. Found me through LinkedIn.",
+    application_name: "#{recruit.name}",
+    applied_location: "#{comm_type[0]} it to her directly",
+    interest_level: 3,
+    user_id: u1.id,
+    company_id: recruit.id,
+)
 
 
 
@@ -177,14 +177,14 @@ jc4 = JobContact.create(
     job_application_id: ja2.id,
     contact_id: c4.id
 )
-# jc5 = JobContact.create(
-#     job_application_id: ja3.id,
-#     contact_id: c5.id
-# )
-# jc6 = JobContact.create(
-#     job_application_id: ja4.id,
-#     contact_id: c6.id
-# )
+jc5 = JobContact.create(
+    job_application_id: ja3.id,
+    contact_id: c5.id
+)
+jc6 = JobContact.create(
+    job_application_id: ja4.id,
+    contact_id: c6.id
+)
 
 
 f1 = FollowUp.create(
@@ -199,14 +199,14 @@ f2 = FollowUp.create(
 )
 f2a = FollowUp.create(
     follow_up_date: Date.parse("December 15 2020"),
-    contact_type: "",
+    contact_type: "#{comm_type[0]}",
     job_application_id: ja2.id 
 )
-# f3 = FollowUp.create(
-#     date: Date.parse("December 10 2020"),
-#     contact_type: "",
-#     job_application_id: ja3.id 
-# )
+f3 = FollowUp.create(
+    follow_up_date: Date.parse("December 10 2020"),
+    contact_type: "#{comm_type[0]}",
+    job_application_id: ja3.id 
+)
 
 
 i1 = Interview.create(
@@ -214,8 +214,8 @@ i1 = Interview.create(
     information: "#{comm_type[2]} interview at 2pm with #{c1.first_name}(HR) and #{c2.first_name}(PM). #{c1.first_name} will send the call info",
     job_application_id: ja1.id 
 )
-# i2 = Interview.create(
-#     interview_date: Date.parse("December 9 2020"),
-#     information: "#{comm_type[1]} call at 10am with #{c6.first_name} to get to know each other",
-#     job_application_id: ja4.id 
-# )
+i2 = Interview.create(
+    interview_date: Date.parse("December 9 2020"),
+    information: "#{comm_type[1]} call at 10am with #{c6.first_name} to get to know each other",
+    job_application_id: ja4.id 
+)

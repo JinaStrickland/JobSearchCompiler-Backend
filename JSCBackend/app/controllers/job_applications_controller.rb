@@ -5,16 +5,31 @@ class JobApplicationsController < ApplicationController
 
     def index 
         job_applications = JobApplication.all 
-        render json: job_applications
+        render json: job_applications, 
+            include:    [:company => {only: [:name, :street_address, :city, :state, :zipcode, :id]}, 
+                        :user => {only: [:first_name, :last_name, :email, :image, :id]}, 
+                        :contacts => {only: [:first_name, :last_name, :email, :title, :phone, :id]},
+                        :follow_ups => {only: [:follow_up_date, :contact_type, :id]},
+                        :interviews => {only: [:interview_date, :information, :id]}]
     end
 
     def show
-        render json: @job_application
+        render json: @job_application, 
+            include:    [:company => {only: [:name, :street_address, :city, :state, :zipcode, :id]}, 
+                        :user => {only: [:first_name, :last_name, :email, :image, :id]}, 
+                        :contacts => {only: [:first_name, :last_name, :email, :title, :phone, :id]},
+                        :follow_ups => {only: [:follow_up_date, :contact_type, :id]},
+                        :interviews => {only: [:interview_date, :information, :id]}]
     end
 
     def create 
         job_application = JobApplication.create(job_application_params)
-        render json: job_application
+        render json: job_application, 
+            include:    [:company => {only: [:name, :street_address, :city, :state, :zipcode, :id]}, 
+                        :user => {only: [:first_name, :last_name, :email, :image, :id]}, 
+                        :contacts => {only: [:first_name, :last_name, :email, :title, :phone, :id]},
+                        :follow_ups => {only: [:follow_up_date, :contact_type, :id]},
+                        :interviews => {only: [:interview_date, :information, :id]}]
     end
 
     def update 
@@ -46,7 +61,7 @@ class JobApplicationsController < ApplicationController
     end
 
     def job_application_params
-        params.require(:job_application).permit(:communication_type, :resume_sent, :status, :resume, :cover_letter, :notes, :applied_location, :application_name, :interest_level, :user_id, :company_id, :contact_id, :follow_up_id, :interview_id, :job_contact_id)
+        params.require(:job_application).permit(:communication_type, :resume_sent, :status, :resume, :cover_letter, :notes, :applied_location, :application_name, :interest_level, :user_id, :company_id)
     end
 
 end
