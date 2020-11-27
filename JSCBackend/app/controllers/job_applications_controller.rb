@@ -31,20 +31,20 @@ class JobApplicationsController < ApplicationController
 
 
     def create 
-        does_company_existing = Company.any?{ |n| n.name == params[:company_id]}
+        # does_company_existing = Company.any?{ |n| n.name == params[:company_id]}
 
-        def new_company
-            x = if does_company_existing == false 
-                Company.create(
-                name: params[:company_id], 
-                street_address: " ", 
-                city: " ", 
-                state: " ", 
-                zipcode: 0
-                )
-            end
-            return x.id 
-        end
+        # def new_company
+        #     x = if does_company_existing == false 
+        #         Company.create(
+        #         name: params[:company_id], 
+        #         street_address: " ", 
+        #         city: " ", 
+        #         state: " ", 
+        #         zipcode: 0
+        #         )
+        #     end
+        #     return x.id 
+        # end
 
         def find_company
             id = Company.find do |n|
@@ -53,7 +53,7 @@ class JobApplicationsController < ApplicationController
                 end
             return id
         end
-        
+
         job_application = JobApplication.create(
             :communication_type, 
             :resume_sent, 
@@ -66,15 +66,20 @@ class JobApplicationsController < ApplicationController
             :interest_level, 
             user_id: 8, 
             company_id: find_company,
-
         )
-
+        if job_application.save 
         render json: job_application, except: [:updated_at, :created_at],
             include:    [:company => {only: [:name, :street_address, :city, :state, :zipcode, :id]}, 
                         :user => {only: [:first_name, :last_name, :email, :image, :id]}, 
                         :contacts => {only: [:first_name, :last_name, :email, :title, :phone, :id]},
                         :follow_ups => {only: [:follow_up_date, :contact_type, :id]},
                         :interviews => {only: [:interview_date, :information, :id]}]
+        else 
+            render json: {
+                success: false,
+                errors: job_application.errors.full_messages
+            }
+        end
     end
 
     def update 
