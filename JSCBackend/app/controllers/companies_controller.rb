@@ -13,7 +13,13 @@ class CompaniesController < ApplicationController
     end
 
     def create 
-        company = Company.create(company_params)
+        company = Company.create(
+            name: " ", 
+            street_address: " ", 
+            city: " ", 
+            state: " ", 
+            zipcode: 0
+        )
         render json: company
     end
 

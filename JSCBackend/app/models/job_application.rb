@@ -9,4 +9,7 @@ class JobApplication < ApplicationRecord
     
     has_many :contacts, through: :job_contacts
 
+
+    
+
 end

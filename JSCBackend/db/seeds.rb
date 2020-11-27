@@ -7,6 +7,8 @@ JobContact.destroy_all
 FollowUp.destroy_all 
 Interview.destroy_all
 
+
+
 comm_type = ["Email", "Phone", "Video", "In Person"]
 status = ["Sent Resume", "Interview Scheduled", "Waiting on Decision", "Got an Offer", "Did Not Get the Position", "Declined the Offer", "Accepted the Offer"]
 
@@ -210,12 +212,12 @@ f3 = FollowUp.create(
 
 
 i1 = Interview.create(
-    interview_date: Date.parse("January 5 2021"),
+    interview_date: Time.parse("January 5 2021 14:00"),
     information: "#{comm_type[2]} interview at 2pm with #{c1.first_name}(HR) and #{c2.first_name}(PM). #{c1.first_name} will send the call info",
     job_application_id: ja1.id 
 )
 i2 = Interview.create(
-    interview_date: Date.parse("December 9 2020"),
+    interview_date: Time.parse("December 9 2020 10:00"),
     information: "#{comm_type[1]} call at 10am with #{c6.first_name} to get to know each other",
     job_application_id: ja4.id 
 )

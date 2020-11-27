@@ -5,7 +5,7 @@ class JobApplicationsController < ApplicationController
 
     def index 
         job_applications = JobApplication.all 
-        render json: job_applications, 
+        render json: job_applications, except: [:updated_at, :created_at],
             include:    [:company => {only: [:name, :street_address, :city, :state, :zipcode, :id]}, 
                         :user => {only: [:first_name, :last_name, :email, :image, :id]}, 
                         :contacts => {only: [:first_name, :last_name, :email, :title, :phone, :id]},
@@ -14,7 +14,7 @@ class JobApplicationsController < ApplicationController
     end
 
     def show
-        render json: @job_application, 
+        render json: @job_application, except: [:updated_at, :created_at],
             include:    [:company => {only: [:name, :street_address, :city, :state, :zipcode, :id]}, 
                         :user => {only: [:first_name, :last_name, :email, :image, :id]}, 
                         :contacts => {only: [:first_name, :last_name, :email, :title, :phone, :id]},
@@ -22,9 +22,54 @@ class JobApplicationsController < ApplicationController
                         :interviews => {only: [:interview_date, :information, :id]}]
     end
 
+    # def self.find_by_name(name)
+    #     find_name = self.all.find do |customer|
+    #       customer.full_name == name
+    #     end
+    #     find_name
+    #   end
+
+
     def create 
-        job_application = JobApplication.create(job_application_params)
-        render json: job_application, 
+        does_company_existing = Company.any?{ |n| n.name == params[:company_id]}
+
+        def new_company
+            x = if does_company_existing == false 
+                Company.create(
+                name: params[:company_id], 
+                street_address: " ", 
+                city: " ", 
+                state: " ", 
+                zipcode: 0
+                )
+            end
+            return x.id 
+        end
+
+        def find_company
+            id = Company.find do |n|
+                n.name == params[:company_id] 
+                    n.id
+                end
+            return id
+        end
+        
+        job_application = JobApplication.create(
+            :communication_type, 
+            :resume_sent, 
+            :status, 
+            :resume, 
+            :cover_letter, 
+            :notes, 
+            :applied_location, 
+            :application_name, 
+            :interest_level, 
+            user_id: 8, 
+            company_id: find_company,
+
+        )
+
+        render json: job_application, except: [:updated_at, :created_at],
             include:    [:company => {only: [:name, :street_address, :city, :state, :zipcode, :id]}, 
                         :user => {only: [:first_name, :last_name, :email, :image, :id]}, 
                         :contacts => {only: [:first_name, :last_name, :email, :title, :phone, :id]},
