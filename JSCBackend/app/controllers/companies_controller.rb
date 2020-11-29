@@ -5,22 +5,22 @@ class CompaniesController < ApplicationController
 
     def index 
         companies = Company.all 
-        render json: companies
+        render json: companies, except: [:updated_at, :created_at],
+        include:    [:contacts => {only: [:first_name, :last_name, :email, :title, :phone, :company_id, :id]},
+                    :job_applications => {only: [:company_id, :id]}]
     end
 
     def show
-        render json: @company
+        render json: @company, except: [:updated_at, :created_at],
+        include:    [:contacts => {only: [:first_name, :last_name, :email, :title, :phone, :company_id, :id]},
+                    :job_applications => {only: [:company_id, :id]}]
     end
 
     def create 
-        company = Company.create(
-            name: " ", 
-            street_address: " ", 
-            city: " ", 
-            state: " ", 
-            zipcode: 0
-        )
-        render json: company
+        company = Company.create(company_params)
+        render json: company, except: [:updated_at, :created_at],
+        include:    [:contacts => {only: [:first_name, :last_name, :email, :title, :phone, :company_id, :id]},
+                    :job_applications => {only: [:company_id, :id]}]
     end
 
     def update 

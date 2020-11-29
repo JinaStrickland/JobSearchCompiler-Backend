@@ -5,16 +5,19 @@ class FollowUpsController < ApplicationController
 
     def index 
         follow_ups = FollowUp.all 
-        render json: follow_ups
+        render json: follow_ups, except: [:updated_at, :created_at],
+            include:    [:job_application => {only: [:application_name, :company_id, :user_id, :id]}]
     end
 
     def show
-        render json: @follow_up
+        render json: @follow_up, except: [:updated_at, :created_at],
+            include:    [:job_application => {only: [:application_name, :company_id, :user_id, :id]}]
     end
 
     def create 
         follow_up = FollowUp.create(follow_up_params)
-        render json: follow_up
+        render json: follow_up, except: [:updated_at, :created_at],
+            include:    [:job_application => {only: [:application_name, :company_id, :user_id, :id]}]
     end
 
     def update 
@@ -37,6 +40,11 @@ class FollowUpsController < ApplicationController
             }
         end
     end
+
+    # def followup_jobapp(params[:job_application_id])
+    #     followup = FollowUp.followups 
+    #     render json: followup, except: [:updated_at, :created_at]
+    # end
 
 
     private 

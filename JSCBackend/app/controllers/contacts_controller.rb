@@ -5,16 +5,22 @@ class ContactsController < ApplicationController
 
     def index 
         contacts = Contact.all 
-        render json: contacts
+        render json: contacts, except: [:updated_at, :created_at],
+            include: [:company => {only: [:name, :street_address, :city, :state, :zipcode, :id]},
+                    :job_applications => {only: [:application_name, :company_id, :user_id, :id]}]
     end
 
     def show
-        render json: @contact
+        render json: @contact, except: [:updated_at, :created_at],
+        include: [:company => {only: [:name, :street_address, :city, :state, :zipcode, :id]},
+                :job_applications => {only: [:application_name, :company_id, :user_id, :id]}]
     end
 
     def create 
         contact = Contact.create(contact_params)
-        render json: contact
+        render json: contact, except: [:updated_at, :created_at],
+        include: [:company => {only: [:name, :street_address, :city, :state, :zipcode, :id]},
+                :job_applications => {only: [:application_name, :company_id, :user_id, :id]}]
     end
 
     def update 

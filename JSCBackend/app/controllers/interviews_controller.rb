@@ -5,16 +5,19 @@ class InterviewsController < ApplicationController
 
     def index 
         interviews = Interview.all 
-        render json: interviews
+        render json: interviews, except: [:updated_at, :created_at],
+        include:    [:job_application => {only: [:application_name, :company_id, :user_id, :id]}]
     end
 
     def show
-        render json: @interview
+        render json: @interview, except: [:updated_at, :created_at],
+        include:    [:job_application => {only: [:application_name, :company_id, :user_id, :id]}]
     end
 
     def create 
         interview = Interview.create(interview_params)
-        render json: interview
+        render json: interview, except: [:updated_at, :created_at],
+        include:    [:job_application => {only: [:application_name, :company_id, :user_id, :id]}]
     end
 
     def update 
