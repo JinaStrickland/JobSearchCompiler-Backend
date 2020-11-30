@@ -21,9 +21,23 @@ u1 = User.create(
 )
 u2 = User.create(
     first_name: "Suzy",
-    last_name: "Williams",
+    last_name: "Hill",
     email: "suzy@email.com",
     password_digest: "suzy",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTujUAbrUr4nk7BtPYpfy4llFW03uxz0bCTqg&usqp=CAU",
+)
+u3 = User.create(
+    first_name: "Jack",
+    last_name: "Clark",
+    email: "jack@email.com",
+    password_digest: "jack",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTujUAbrUr4nk7BtPYpfy4llFW03uxz0bCTqg&usqp=CAU",
+)
+u4 = User.create(
+    first_name: "Evan",
+    last_name: "Lewis",
+    email: "jack@email.com",
+    password_digest: "jack",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTujUAbrUr4nk7BtPYpfy4llFW03uxz0bCTqg&usqp=CAU",
 )
 
@@ -144,7 +158,7 @@ c5 = Contact.create(
 )
 c6 = Contact.create(
     first_name: "Larry",
-    last_name: "Beek",
+    last_name: "Williams",
     email: "larry@email.com",
     title: "HR Director",
     phone: "202-221-1111",
@@ -240,11 +254,11 @@ ja4 = JobApplication.create(
 )
 ja5 = JobApplication.create(
     communication_type: "#{comm_type[0]}",
-    resume_sent: Date.parse("December 4 2020"),
+    resume_sent: Date.parse("November 19 2020"),
     resume: "",
     cover_letter: "",
-    status: "#{status[1]}",
-    notes: "#{c5.first_name} contacted me for possible web development position in DC and in Arlington. Found me through LinkedIn.",
+    status: "#{status[0]}",
+    notes: "",
     application_name: "#{google.name}",
     applied_location: "#{comm_type[0]} it to her directly",
     interest_level: 3,
