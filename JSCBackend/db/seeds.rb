@@ -35,14 +35,14 @@ codeoverflow = Company.create(
     state: "DC",
     zipcode: 20036
 )
-amazn = Company.create(
+amazon = Company.create(
     name: "Amazin",
     street_address: "900 Owen Boulevard",
     city: "Arlington",
     state: "VA",
     zipcode: 22202
 )
-flaron = Company.create(
+flatiron = Company.create(
     name: "Flaron",
     street_address: "111 Tron Street, NW",
     city: "Washington",
@@ -56,49 +56,77 @@ recruit = Company.create(
     state: "VA",
     zipcode: 22033
 )
+google = Company.create(
+    name: "Google",
+    street_address: "800 G Street",
+    city: "Reston",
+    state: "VA",
+    zipcode: 20915
+)
+boeing = Company.create(
+    name: "Boeing",
+    street_address: "120 Tech Street",
+    city: "Alexandria",
+    state: "VA",
+    zipcode: 22302
+)
+orbit = Company.create(
+    name: "Orbit",
+    street_address: "620 Galaxy Circle",
+    city: "Washington",
+    state: "DC",
+    zipcode: 20036
+)
+network = Company.create(
+    name: "Network Tech",
+    street_address: "620 Galaxy Circle",
+    city: "Rockville",
+    state: "MD",
+    zipcode: 20877
+)
+acadia = Company.create(
+    name: "Acadia",
+    street_address: "22 Range Boulvard",
+    city: "Vienna",
+    state: "VA",
+    zipcode: 22180
+)
+willer = Company.create(
+    name: "Willer",
+    street_address: "5 Jackson Street",
+    city: "Fairfax",
+    state: "VA",
+    zipcode: 22000
+)
+
+
 
 
 c1 = Contact.create(
-    first_name: "John",
-    last_name: "Doe",
-    email: "john@email.com",
+    first_name: "Anna",
+    last_name: "Lee",
+    email: "anna@email.com",
     title: "HR Manager",
     phone: "202-859-2727",
     company_id: codeoverflow.id
 )
 c2 = Contact.create(
-    first_name: "Anna",
-    last_name: "Lee",
-    email: "anna@email.com",
-    title: "Project Manager",
-    phone: "202-859-2828",
-    company_id: codeoverflow.id
-)
-c3 = Contact.create(
     first_name: "Rick",
     last_name: "Slon",
     email: "rick@email.com",
     title: "HR Manager",
-    phone: "202-221-4321",
-    company_id: amazn.id
+    phone: "703-976-1000",
+    company_id: amazon.id
 )
-c4 = Contact.create(
-    first_name: "Larry",
-    last_name: "Beek",
-    email: "larry@email.com",
-    title: "Senior Engineer",
-    phone: "202-221-1111",
-    company_id: amazn.id
-)
-c5 = Contact.create(
+c3 = Contact.create(
     first_name: "Bob",
     last_name: "Jones",
     email: "bob@email.com",
     title: "HR Manager",
-    phone: "703-703-4567",
-    company_id: flaron.id
+    phone: "202-221-4321",
+    company_id: flatiron.id
 )
-c6 = Contact.create(
+c4 = Contact.create(
     first_name: "Rebecca",
     last_name: "Lee",
     email: "rebecca@email.com",
@@ -106,6 +134,56 @@ c6 = Contact.create(
     phone: "703-777-3333",
     company_id: recruit.id
 )
+c5 = Contact.create(
+    first_name: "John",
+    last_name: "Lopez",
+    email: "john@email.com",
+    title: "HR Manager",
+    phone: "703-213-1212",
+    company_id: google.id
+)
+c6 = Contact.create(
+    first_name: "Larry",
+    last_name: "Beek",
+    email: "larry@email.com",
+    title: "HR Director",
+    phone: "202-221-1111",
+    company_id: boeing.id
+)
+c7 = Contact.create(
+    first_name: "Olive",
+    last_name: "Miller",
+    email: "olive@email.com",
+    title: "Sr HR Manager",
+    phone: "202-859-2828",
+    company_id: orbit.id
+)
+c8 = Contact.create(
+    first_name: "David",
+    last_name: "Anderson",
+    email: "david@email.com",
+    title: "HR Manager",
+    phone: "240-204-2020",
+    company_id: network.id
+)
+c9 = Contact.create(
+    first_name: "Leo",
+    last_name: "Young",
+    email: "leo@email.com",
+    title: "Owner",
+    phone: "703-589-9000",
+    company_id: acadia.id
+)
+c10 = Contact.create(
+    first_name: "Catherine",
+    last_name: "Lee",
+    email: "catherine@email.com",
+    title: "HR Manager",
+    phone: "703-425-6777",
+    company_id: willer.id
+)
+
+
 
 
 ja1 = JobApplication.create(
@@ -128,11 +206,11 @@ ja2 = JobApplication.create(
     cover_letter: "",
     status: "#{status[0]}",
     notes: "It seems I can do different things, opportunities, once I'm in the company. A potential growth opportunities. They have offices throught out the US.",
-    application_name: "#{amazn.name} Web Developer",
-    applied_location: "#{amazn.name} website",
+    application_name: "#{amazon.name} Web Developer",
+    applied_location: "#{amazon.name} website",
     interest_level: 5,
     user_id: u1.id,
-    company_id: amazn.id
+    company_id: amazon.id
 )
 ja3 = JobApplication.create(
     communication_type: "#{comm_type[0]}",
@@ -141,11 +219,11 @@ ja3 = JobApplication.create(
     cover_letter: "",
     status: "#{status[0]}",
     notes: "This is a coaching position for SE program. They are looking for 2 people by end of the year.",
-    application_name: "#{flaron.name} SE Coach",
-    applied_location: "#{flaron.name} website",
+    application_name: "#{flatiron.name} SE Coach",
+    applied_location: "#{flatiron.name} website",
     interest_level: 3,
     user_id: u1.id,
-    company_id: flaron.id,
+    company_id: flatiron.id,
 )
 ja4 = JobApplication.create(
     communication_type: "#{comm_type[0]}",
@@ -153,12 +231,25 @@ ja4 = JobApplication.create(
     resume: "",
     cover_letter: "",
     status: "#{status[1]}",
-    notes: "#{c1.first_name} contacted me for possible web development position in DC and in Arlington. Found me through LinkedIn.",
+    notes: "#{c4.first_name} contacted me for possible web development position in DC and in Arlington. Found me through LinkedIn.",
     application_name: "#{recruit.name}",
     applied_location: "#{comm_type[0]} it to her directly",
     interest_level: 3,
     user_id: u1.id,
     company_id: recruit.id,
+)
+ja5 = JobApplication.create(
+    communication_type: "#{comm_type[0]}",
+    resume_sent: Date.parse("December 4 2020"),
+    resume: "",
+    cover_letter: "",
+    status: "#{status[1]}",
+    notes: "#{c5.first_name} contacted me for possible web development position in DC and in Arlington. Found me through LinkedIn.",
+    application_name: "#{google.name}",
+    applied_location: "#{comm_type[0]} it to her directly",
+    interest_level: 3,
+    user_id: u1.id,
+    company_id: google.id,
 )
 
 
