@@ -23,56 +23,53 @@ class JobApplicationsController < ApplicationController
     end
 
     def create 
-        # does_company_existing = Company.any?{ |n| n.name == params[:company_id]}
+        company = Company.find_or_create_by(
+            name: params[:name], 
+            street_address: params[:street_address].capitalize, 
+            city: params[:street_address].capitalize, 
+            state: params[:street_address].upcase, 
+            zipcode: params[:street_address]
+        )
+  
+        contact = Contact.find_or_create_by(
+            first_name: params[:first_name].capitalize,
+            last_name: params[:last_name].capitalize,
+            email: params[:email].downcase,
+            title: params[:title].capitalize,
+            phone: params[:phone],
+            company_id: company.id
+        )
 
-        # def new_company
-        #     x = if does_company_existing == false 
-        #         Company.create(
-        #         name: params[:company_id], 
-        #         street_address: " ", 
-        #         city: " ", 
-        #         state: " ", 
-        #         zipcode: 0
-        #         )
-        #     end
-        #     return x.id 
-        # end
+        job_application = JobApplication.create(
+            communication_type: params[:communication_type].capitalize, 
+            resume_sent: params[:resume_sent], 
+            status: params[:status].capitalize, 
+            resume: params[:resume], 
+            cover_letter: params[:cover_letter], 
+            notes: params[:notes].capitalize, 
+            applied_location: params[:applied_location].capitalize, 
+            application_name: params[:application_name].capitalize, 
+            interest_level: params[:interest_level],
+            user_id: params[:user_id], 
+            company_id: company.id,
+        )
 
-        # def find_company
-        #     comp = Company.find do |n|
-        #         n.name == params[:company_id] 
-        #     end
-        #     comp.id
-        # end
+        FollowUp.create(
+            follow_up_date: params[:follow_up_date],
+            contact_type: params[:contact_type].capitalize
+        )
+      
+        Interview.create(
+            interview_date: params[:interview_date],
+            information: params[:information].capitalize
+        )
 
-        # job_application = JobApplication.create(
-        #     :communication_type, 
-        #     :resume_sent, 
-        #     :status, 
-        #     :resume, 
-        #     :cover_letter, 
-        #     :notes, 
-        #     :applied_location, 
-        #     :application_name, 
-        #     :interest_level, 
-        #     user_id: 8, 
-        #     company_id: find_company,
-        # )
-        job_application = JobApplication.create(job_application_params)
-
-        # if job_application.save 
-        render json: job_application
-            # include:    [:company => {only: [:name, :street_address, :city, :state, :zipcode, :id]}, 
-            #             :user => {only: [:first_name, :last_name, :email, :image, :id]}, 
-            #             :contacts => {only: [:first_name, :last_name, :email, :title, :phone, :id]},
-            #             :follow_ups => {only: [:follow_up_date, :contact_type, :id]},
-            #             :interviews => {only: [:interview_date, :information, :id]}]
-        # else 
-        #     render json: {
-        #         success: false,
-        #         errors: job_application.errors.full_messages
-        #     }
-        # end
+        render json: job_application,
+            include:    [:company => {only: [:name, :street_address, :city, :state, :zipcode, :id]}, 
+                        :user => {only: [:first_name, :last_name, :email, :image, :id]}, 
+                        :contacts => {only: [:first_name, :last_name, :email, :title, :phone, :id]},
+                        :follow_ups => {only: [:follow_up_date, :contact_type, :id]},
+                        :interviews => {only: [:interview_date, :information, :id]}]
     end
 
     def update 

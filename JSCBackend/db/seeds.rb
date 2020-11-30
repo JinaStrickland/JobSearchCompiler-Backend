@@ -50,14 +50,14 @@ codeoverflow = Company.create(
     zipcode: 20036
 )
 amazon = Company.create(
-    name: "Amazin",
+    name: "Amazon",
     street_address: "900 Owen Boulevard",
     city: "Arlington",
     state: "VA",
     zipcode: 22202
 )
 flatiron = Company.create(
-    name: "Flaron",
+    name: "Flatiron",
     street_address: "111 Tron Street, NW",
     city: "Washington",
     state: "DC",
@@ -215,7 +215,7 @@ ja1 = JobApplication.create(
 )
 ja2 = JobApplication.create(
     communication_type: "#{comm_type[0]}",
-    resume_sent: Date.parse("November 30 2020"),
+    resume_sent: Date.parse("November 18 2020"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -228,7 +228,7 @@ ja2 = JobApplication.create(
 )
 ja3 = JobApplication.create(
     communication_type: "#{comm_type[0]}",
-    resume_sent: Date.parse("November 20 2020"),
+    resume_sent: Date.parse("November 12 2020"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -254,16 +254,29 @@ ja4 = JobApplication.create(
 )
 ja5 = JobApplication.create(
     communication_type: "#{comm_type[0]}",
-    resume_sent: Date.parse("November 19 2020"),
+    resume_sent: Date.parse("November 10 2020"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
-    notes: "",
-    application_name: "#{google.name}",
-    applied_location: "#{comm_type[0]} it to her directly",
-    interest_level: 3,
+    notes: "It's asking for least 2 year of expereince.  Need to impress them with my soft skills.",
+    application_name: "#{google.name} Jr Web Developer",
+    applied_location: "#{google.name} website",
+    interest_level: 4,
     user_id: u1.id,
     company_id: google.id,
+)
+ja6 = JobApplication.create(
+    communication_type: "#{comm_type[0]}",
+    resume_sent: Date.parse("November 10 2020"),
+    resume: "",
+    cover_letter: "",
+    status: "#{status[0]}",
+    notes: "Fit the skill requriement",
+    application_name: "#{boeing.name} Entry Level SE",
+    applied_location: "#{boeing.name} website",
+    interest_level: 5,
+    user_id: u1.id,
+    company_id: boeing.id,
 )
 
 
@@ -305,24 +318,44 @@ f2 = FollowUp.create(
     job_application_id: ja2.id 
 )
 f2a = FollowUp.create(
-    follow_up_date: Date.parse("December 15 2020"),
+    follow_up_date: Date.parse("November 16 2020"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja2.id 
 )
 f3 = FollowUp.create(
-    follow_up_date: Date.parse("December 10 2020"),
+    follow_up_date: Date.parse("December 4 2020"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja3.id 
+)
+f4 = FollowUp.create(
+    follow_up_date: Date.parse("December 18 2020"),
+    contact_type: "#{comm_type[0]}",
+    job_application_id: ja4.id 
+)
+f5 = FollowUp.create(
+    follow_up_date: Date.parse("November 20 2020"),
+    contact_type: "#{comm_type[0]}",
+    job_application_id: ja5.id 
+)
+f6 = FollowUp.create(
+    follow_up_date: Date.parse("November 23 2020"),
+    contact_type: "#{comm_type[0]}",
+    job_application_id: ja6.id 
 )
 
 
 i1 = Interview.create(
-    interview_date: Time.parse("January 5 2021 14:00"),
+    interview_date: Time.parse("14:00", DateTime.parse("January 5 2021")),
     information: "#{comm_type[2]} interview at 2pm with #{c1.first_name}(HR) and #{c2.first_name}(PM). #{c1.first_name} will send the call info",
     job_application_id: ja1.id 
 )
 i2 = Interview.create(
-    interview_date: Time.parse("December 9 2020 10:00"),
-    information: "#{comm_type[1]} call at 10am with #{c6.first_name} to get to know each other",
+    interview_date: Time.parse("10:00", DateTime.parse("December 15 2020")), 
+    information: "First interview with #{c2.first_name}",
+    job_application_id: ja2.id 
+)
+i4 = Interview.create(
+    interview_date: Time.parse("09:00", DateTime.parse("December 9 2020")), 
+    information: "Get to know each other meeting with #{c6.first_name} at Starbucks",
     job_application_id: ja4.id 
 )
