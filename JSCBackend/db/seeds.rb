@@ -9,8 +9,8 @@ Interview.destroy_all
 
 
 
-comm_type = ["Email", "Phone", "Video", "In Person"]
-status = ["Sent Resume", "Interview Scheduled", "Waiting on Decision", "Got an Offer", "Did Not Get the Position", "Declined the Offer", "Accepted the Offer"]
+comm_type = ["Email", "Phone", "Zoom", "In Person"]
+status = [ "Sent Resume", "Interview Scheduled", "Wating...", "Another Round of Interview Scheduled", "I Did It! Got the Offer",  "Regrets by Me", "Regrets by Them", "With Pleasure!", "Bummer...Next!", "On Hold"]
 
 u1 = User.create(
     first_name: "Jina",

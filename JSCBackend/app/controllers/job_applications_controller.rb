@@ -44,8 +44,8 @@ class JobApplicationsController < ApplicationController
             communication_type: params[:communication_type].capitalize, 
             resume_sent: params[:resume_sent], 
             status: params[:status].capitalize, 
-            resume: params[:resume], 
-            cover_letter: params[:cover_letter], 
+            # resume: params[:resume], 
+            # cover_letter: params[:cover_letter], 
             notes: params[:notes].capitalize, 
             applied_location: params[:applied_location].capitalize, 
             application_name: params[:application_name].capitalize, 
@@ -53,12 +53,12 @@ class JobApplicationsController < ApplicationController
             user_id: params[:user_id], 
             company_id: company.id,
         )
-
+        byebug 
         FollowUp.create(
-            follow_up_date: params[:follow_up_date],
+            follow_up_date: Date.parse(params[:follow_up_date]),
             contact_type: params[:contact_type].capitalize
         )
-      
+    #   Time.parse("14:00", DateTime.parse("January 5 2021")
         Interview.create(
             interview_date: params[:interview_date],
             information: params[:information].capitalize
