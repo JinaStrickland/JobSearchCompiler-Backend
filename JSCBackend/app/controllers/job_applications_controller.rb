@@ -25,51 +25,47 @@ class JobApplicationsController < ApplicationController
     def create 
         company = Company.find_or_create_by(
             name: params[:name], 
-            street_address: params[:street_address].capitalize, 
-            city: params[:street_address].capitalize, 
-            state: params[:street_address].upcase, 
-            zipcode: params[:street_address]
+            street_address: params[:street_address], 
+            city: params[:street_address], 
+            state: params[:street_address], 
+            zipcode: params[:street_address],
         )
-  
-        contact = Contact.find_or_create_by(
-            first_name: params[:first_name].capitalize,
-            last_name: params[:last_name].capitalize,
-            email: params[:email].downcase,
-            title: params[:title].capitalize,
-            phone: params[:phone],
-            company_id: company.id
-        )
-
         job_application = JobApplication.create(
-            communication_type: params[:communication_type].capitalize, 
-            resume_sent: params[:resume_sent], 
-            status: params[:status].capitalize, 
+            communication_type: params[:communication_type], 
+            resume_sent: Date.parse(params[:resume_sent]), # params: "2020-12-10T14:00:00.000Z"
+            status: params[:status], 
             # resume: params[:resume], 
             # cover_letter: params[:cover_letter], 
-            notes: params[:notes].capitalize, 
-            applied_location: params[:applied_location].capitalize, 
-            application_name: params[:application_name].capitalize, 
+            notes: params[:notes], 
+            applied_location: params[:applied_location], 
+            application_name: params[:application_name], 
             interest_level: params[:interest_level],
             user_id: params[:user_id], 
             company_id: company.id,
         )
-        byebug 
-        FollowUp.create(
-            follow_up_date: Date.parse(params[:follow_up_date]),
-            contact_type: params[:contact_type].capitalize
+        contact = Contact.find_or_create_by(
+            first_name: params[:first_name].capitalize,
+            last_name: params[:last_name].capitalize,
+            email: params[:email],
+            title: params[:title],
+            phone: params[:phone],
+            company_id: company.id,
         )
-    #   Time.parse("14:00", DateTime.parse("January 5 2021")
-        Interview.create(
-            interview_date: params[:interview_date],
-            information: params[:information].capitalize
+        job_contact = JobContact.create(
+            job_application_id: job_application.id,
+            contact_id: contact.id
+        )
+        follow_up = FollowUp.create(
+            follow_up_date: Date.parse(params[:follow_up_date]),
+            contact_type: params[:contact_type],
+            job_application_id: job_application.id 
         )
 
         render json: job_application,
             include:    [:company => {only: [:name, :street_address, :city, :state, :zipcode, :id]}, 
                         :user => {only: [:first_name, :last_name, :email, :image, :id]}, 
                         :contacts => {only: [:first_name, :last_name, :email, :title, :phone, :id]},
-                        :follow_ups => {only: [:follow_up_date, :contact_type, :id]},
-                        :interviews => {only: [:interview_date, :information, :id]}]
+                        :follow_ups => {only: [:follow_up_date, :contact_type, :id]}]
     end
 
     def update 

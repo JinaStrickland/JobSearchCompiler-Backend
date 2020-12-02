@@ -15,9 +15,17 @@ class InterviewsController < ApplicationController
     end
 
     def create 
-        interview = Interview.create(interview_params)
-        render json: interview, except: [:updated_at, :created_at],
-        include:    [:job_application => {only: [:application_name, :company_id, :user_id, :id]}]
+        # Time.parse("11:00", DateTime.parse("January 5 2021")) from seed data
+        # params: "2020-12-10T11:00"
+        # byebug
+        interview_time = params[:interview_date].split("T")[1]
+        interview = Interview.create(
+            interview_date: Time.parse(interview_time, DateTime.parse(params[:interview_date])),
+            information: params[:information],
+            job_application_id: params[:job_application_id],
+        )
+        render json: interview, 
+            include:    [:job_application => {only: [:application_name, :company_id, :user_id, :id]}]
     end
 
     def update 
@@ -40,7 +48,6 @@ class InterviewsController < ApplicationController
             }
         end
     end
-
 
     private 
 
