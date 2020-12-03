@@ -17,7 +17,6 @@ class InterviewsController < ApplicationController
     def create 
         # Time.parse("11:00", DateTime.parse("January 5 2021")) from seed data
         # params: "2020-12-10T11:00"
-        # byebug
         interview_time = params[:interview_date].split("T")[1]
         interview = Interview.create(
             interview_date: Time.parse(interview_time, DateTime.parse(params[:interview_date])),
