@@ -210,12 +210,12 @@ c11 = Contact.create(
 
 ja1 = JobApplication.create(
     communication_type: "#{comm_type[0]}",
-    resume_sent: Date.parse("November 16 2020"),
+    resume_sent: Date.parse("February 1 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
     notes: "Had a good conversation with #{c1.first_name}. Work enviroment sounds nice and type of work they do seem very interesting.",
-    application_name: "#{codeoverflow.name} CodeOverFlow Frontend Web Developer",
+    application_name: "#{codeoverflow.name} Frontend Web Developer",
     applied_location: "#{codeoverflow.name} website",
     interest_level: 5,
     user_id: u1.id,
@@ -223,7 +223,7 @@ ja1 = JobApplication.create(
 )
 ja2 = JobApplication.create(
     communication_type: "#{comm_type[0]}",
-    resume_sent: Date.parse("November 2 2020"),
+    resume_sent: Date.parse("February 3 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -236,7 +236,7 @@ ja2 = JobApplication.create(
 )
 ja3 = JobApplication.create(
     communication_type: "#{comm_type[0]}",
-    resume_sent: Date.parse("November 2 2020"),
+    resume_sent: Date.parse("February 4 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -249,7 +249,7 @@ ja3 = JobApplication.create(
 )
 ja4 = JobApplication.create(
     communication_type: "#{comm_type[0]}",
-    resume_sent: Date.parse("November 18 2020"),
+    resume_sent: Date.parse("February 5 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -262,7 +262,7 @@ ja4 = JobApplication.create(
 )
 ja5 = JobApplication.create(
     communication_type: "#{comm_type[0]}",
-    resume_sent: Date.parse("November 9 2020"),
+    resume_sent: Date.parse("February 9 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -275,7 +275,7 @@ ja5 = JobApplication.create(
 )
 ja6 = JobApplication.create(
     communication_type: "#{comm_type[0]}",
-    resume_sent: Date.parse("October 28 2020"),
+    resume_sent: Date.parse("February 10 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -288,7 +288,7 @@ ja6 = JobApplication.create(
 )
 ja7 = JobApplication.create(
     communication_type: "#{comm_type[0]}",
-    resume_sent: Date.parse("October 29 2020"),
+    resume_sent: Date.parse("February 12 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -301,7 +301,7 @@ ja7 = JobApplication.create(
 )
 ja8 = JobApplication.create(
     communication_type: "#{comm_type[0]}",
-    resume_sent: Date.parse("November 16 2020"),
+    resume_sent: Date.parse("February 15 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -314,7 +314,7 @@ ja8 = JobApplication.create(
 )
 ja9= JobApplication.create(
     communication_type: "#{comm_type[0]}",
-    resume_sent: Date.parse("November 10 2020"),
+    resume_sent: Date.parse("February 16 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -327,7 +327,7 @@ ja9= JobApplication.create(
 )
 ja10 = JobApplication.create(
     communication_type: "#{comm_type[0]}",
-    resume_sent: Date.parse("November 2 2020"),
+    resume_sent: Date.parse("February 17 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -340,7 +340,7 @@ ja10 = JobApplication.create(
 )
 ja11 = JobApplication.create(
     communication_type: "#{comm_type[0]}",
-    resume_sent: Date.parse("October 22 2020"),
+    resume_sent: Date.parse("February 19 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -401,77 +401,82 @@ jc11 = JobContact.create(
 
 
 f1 = FollowUp.create(
-    follow_up_date: Date.parse("November 20 2020"),
+    follow_up_date: Date.parse("February 15 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja1.id 
 )
 f2 = FollowUp.create(
-    follow_up_date: Date.parse("November 18 2020"),
+    follow_up_date: Date.parse("February 17 2021"),
     contact_type: "#{comm_type[1]}",
     job_application_id: ja2.id 
 )
-f2a = FollowUp.create(
-    follow_up_date: Date.parse("December 22 2020"),
-    contact_type: "#{comm_type[0]}",
-    job_application_id: ja2.id 
-)
+# f2a = FollowUp.create(
+#     follow_up_date: Date.parse("February 22 2021"),
+#     contact_type: "#{comm_type[0]}",
+#     job_application_id: ja2.id 
+# )
 f3 = FollowUp.create(
-    follow_up_date: Date.parse("November 12 2020"),
+    follow_up_date: Date.parse("February 18 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja3.id 
 )
+f4 = FollowUp.create(
+    follow_up_date: Date.parse("February 19 2021"),
+    contact_type: "#{comm_type[0]}",
+    job_application_id: ja4.id 
+)
 f5 = FollowUp.create(
-    follow_up_date: Date.parse("November 23 2020"),
+    follow_up_date: Date.parse("February 23 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja5.id 
 )
-f5a = FollowUp.create(
-    follow_up_date: Date.parse("December 17 2020"),
-    contact_type: "#{comm_type[0]}",
-    job_application_id: ja5.id 
-)
+# f5a = FollowUp.create(
+#     follow_up_date: Date.parse("December 17 2020"),
+#     contact_type: "#{comm_type[0]}",
+#     job_application_id: ja5.id 
+# )
 f6 = FollowUp.create(
-    follow_up_date: Date.parse("November 5 2020"),
+    follow_up_date: Date.parse("February 24 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja6.id 
 )
 f7 = FollowUp.create(
-    follow_up_date: Date.parse("November 13 2020"),
+    follow_up_date: Date.parse("February 26 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja7.id 
 )
-f7 = FollowUp.create(
-    follow_up_date: Date.parse("December 8 2020"),
-    contact_type: "#{comm_type[0]}",
-    job_application_id: ja7.id 
-)
+# f7a = FollowUp.create(
+#     follow_up_date: Date.parse("December 8 2020"),
+#     contact_type: "#{comm_type[0]}",
+#     job_application_id: ja7.id 
+# )
 f8 = FollowUp.create(
-    follow_up_date: Date.parse("November 30 2020"),
+    follow_up_date: Date.parse("March 1 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja8.id 
 )
-f8a = FollowUp.create(
-    follow_up_date: Date.parse("December 16 2020"),
-    contact_type: "#{comm_type[0]}",
-    job_application_id: ja8.id 
-)
+# f8a = FollowUp.create(
+#     follow_up_date: Date.parse("March 16 2021"),
+#     contact_type: "#{comm_type[0]}",
+#     job_application_id: ja8.id 
+# )
 f9 = FollowUp.create(
-    follow_up_date: Date.parse("November 24 2020"),
+    follow_up_date: Date.parse("March 2 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja9.id 
 )
 f10 = FollowUp.create(
-    follow_up_date: Date.parse("November 16 2020"),
+    follow_up_date: Date.parse("March 3 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja10.id 
 )
-f10a = FollowUp.create(
-    follow_up_date: Date.parse("December 17 2020"),
-    contact_type: "#{comm_type[0]}",
-    job_application_id: ja10.id 
-)
+# f10a = FollowUp.create(
+#     follow_up_date: Date.parse("March 2 2021"),
+#     contact_type: "#{comm_type[0]}",
+#     job_application_id: ja10.id 
+# )
 f11 = FollowUp.create(
-    follow_up_date: Date.parse("November 9 2020"),
+    follow_up_date: Date.parse("March 5 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja11.id 
 )
@@ -479,17 +484,17 @@ f11 = FollowUp.create(
 
 
 i1 = Interview.create(
-    interview_date: Time.parse("14:00", DateTime.parse("December 8 2021")),
+    interview_date: Time.parse("14:00", DateTime.parse("February 8 2021")),
     information: "#{comm_type[2]} interview at 2pm with #{c1.first_name}(HR). #{c1.first_name} will send the call info",
     job_application_id: ja1.id 
 )
 i3 = Interview.create(
-    interview_date: Time.parse("10:00", DateTime.parse("December 15 2020")), 
+    interview_date: Time.parse("10:00", DateTime.parse("February 10 2021")), 
     information: "First interview with Flatiron's campus director #{c3.first_name}",
     job_application_id: ja3.id 
 )
 i4 = Interview.create(
-    interview_date: Time.parse("09:00", DateTime.parse("December 3 2020")), 
+    interview_date: Time.parse("09:00", DateTime.parse("February 12 2021")), 
     information: "Get to know each other meeting with #{c4.first_name} at Starbucks",
     job_application_id: ja4.id 
 )
