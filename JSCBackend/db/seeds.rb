@@ -484,18 +484,35 @@ f11 = FollowUp.create(
 
 
 i1 = Interview.create(
-    interview_date: Time.parse("14:00", DateTime.parse("February 8 2021")),
+    interview_date: Time.local(2021, "feb", 8, 14, 0, 0),
     information: "#{comm_type[2]} interview at 2pm with #{c1.first_name}(HR). #{c1.first_name} will send the call info",
     job_application_id: ja1.id 
 )
 i3 = Interview.create(
-    interview_date: Time.parse("10:00", DateTime.parse("February 10 2021")), 
+    interview_date: Time.local(2021, "feb", 10, 10, 0, 0), 
     information: "First interview with Flatiron's campus director #{c3.first_name}",
     job_application_id: ja3.id 
 )
 i4 = Interview.create(
-    interview_date: Time.parse("09:00", DateTime.parse("February 12 2021")), 
+    interview_date: Time.local(2021, "feb", 12, 9, 0, 0), 
     information: "Get to know each other meeting with #{c4.first_name} at Starbucks",
     job_application_id: ja4.id 
 )
+
+
+# i1 = Interview.create(
+#     interview_date: Time.parse("14:00", DateTime.parse("February 8 2021")),
+#     information: "#{comm_type[2]} interview at 2pm with #{c1.first_name}(HR). #{c1.first_name} will send the call info",
+#     job_application_id: ja1.id 
+# )
+# i3 = Interview.create(
+#     interview_date: Time.parse("10:00", DateTime.parse("February 10 2021")), 
+#     information: "First interview with Flatiron's campus director #{c3.first_name}",
+#     job_application_id: ja3.id 
+# )
+# i4 = Interview.create(
+#     interview_date: Time.parse("09:00", DateTime.parse("February 12 2021")), 
+#     information: "Get to know each other meeting with #{c4.first_name} at Starbucks",
+#     job_application_id: ja4.id 
+# )
 
