@@ -26,9 +26,9 @@ class JobApplicationsController < ApplicationController
         company = Company.find_or_create_by(
             name: params[:name], 
             street_address: params[:street_address], 
-            city: params[:street_address], 
-            state: params[:street_address], 
-            zipcode: params[:street_address],
+            city: params[:city], 
+            state: params[:state], 
+            zipcode: params[:zipcode],
         )
         job_application = JobApplication.create(
             communication_type: params[:communication_type], 
