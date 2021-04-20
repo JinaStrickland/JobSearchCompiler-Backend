@@ -7,7 +7,7 @@ JobContact.destroy_all
 FollowUp.destroy_all 
 Interview.destroy_all
 
-comm_type = ["Email", "Phone", "Zoom", "In Person"]
+comm_type = ["Email", "Phone", "Zoom", "In Person", "LikedIn Message"] 
 status = [ "Sent Resume", "Interview Scheduled", "Wating...", "Another Round of Interview Scheduled", "I Did It! Got the Offer",  "Regrets by Me", "Regrets by Them", "With Pleasure!", "Bummer...Next!", "On Hold"]
 
 u1 = User.create(
@@ -89,12 +89,12 @@ ctg = Company.create(
     state: "MD",
     zipcode: 20902
 )
-mantech = Company.create(
-    name: "ManTech",
-    street_address: "2251 Corporate Park Drive",
-    city: "Herndon",
-    state: "VA",
-    zipcode: 20171
+openbox9 = Company.create(
+    name: "Openbox9",
+    street_address: "3805 12th Street, NE",
+    city: "Washington",
+    state: "DC",
+    zipcode: 20017
 )
 postscript = Company.create(
     name: "Postscript",
@@ -103,19 +103,19 @@ postscript = Company.create(
     state: "CA",
     zipcode: 94115
 )
-wrberkley = Company.create(
-    name: "W.R. Berkley",
-    street_address: "9301 Innovation Drive",
-    city: "Reston",
+armedia = Company.create(
+    name: "Armedia",
+    street_address: "8221 Old Courthouse Road, Suite 300",
+    city: "Vienna",
     state: "VA",
-    zipcode: 22036
+    zipcode: 22181
 )
 
 
 
 c1 = Contact.create(
     first_name: "Anna",
-    last_name: "Lee",
+    last_name: "Lettle",
     email: "anna@email.com",
     title: "HR Manager",
     phone: "703-859-2727",
@@ -139,7 +139,7 @@ c3 = Contact.create(
 )
 c4 = Contact.create(
     first_name: "Rebecca",
-    last_name: "Lee",
+    last_name: "Lead",
     email: "rebecca@email.com",
     title: "Sr Recruiter",
     phone: "703-777-3333",
@@ -163,7 +163,7 @@ c6 = Contact.create(
 )
 c7 = Contact.create(
     first_name: "Olive",
-    last_name: "Miller",
+    last_name: "Cava",
     email: "olive@email.com",
     title: "Sr HR Manager",
     phone: "703-859-2828",
@@ -182,12 +182,12 @@ c9 = Contact.create(
     last_name: "Young",
     email: "leo@email.com",
     title: "HR Manager",
-    phone: "703-589-9000",
-    company_id: mantech.id
+    phone: "202-589-9000",
+    company_id: openbox9.id
 )
 c10 = Contact.create(
     first_name: "Catherine",
-    last_name: "Lee",
+    last_name: "Leet",
     email: "catherine@email.com",
     title: "CTO",
     phone: "703-425-6777",
@@ -199,13 +199,13 @@ c11 = Contact.create(
     email: "jack@email.com",
     title: "HR Manager",
     phone: "703-425-6777",
-    company_id: wrberkley.id
+    company_id: armedia.id
 )
 
 
 
 ja1 = JobApplication.create(
-    communication_type: "#{comm_type[0]}",
+    communication_type: "#{comm_type[4]}",
     resume_sent: Date.parse("March 3 2021"),
     resume: "",
     cover_letter: "",
@@ -218,8 +218,8 @@ ja1 = JobApplication.create(
     company_id: triblio.id
 )
 ja2 = JobApplication.create(
-    communication_type: "#{comm_type[1]}",
-    resume_sent: Date.parse("March 22 2021"),
+    communication_type: "#{comm_type[4]}",
+    resume_sent: Date.parse("March 12 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -231,8 +231,8 @@ ja2 = JobApplication.create(
     company_id: customink.id
 )
 ja3 = JobApplication.create(
-    communication_type: "#{comm_type[2]}",
-    resume_sent: Date.parse("March 17 2021"),
+    communication_type: "#{comm_type[4]}",
+    resume_sent: Date.parse("March 15 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -244,8 +244,8 @@ ja3 = JobApplication.create(
     company_id: forumone.id,
 )
 ja4 = JobApplication.create(
-    communication_type: "#{comm_type[1]}",
-    resume_sent: Date.parse("March 31 2021"),
+    communication_type: "#{comm_type[4]}",
+    resume_sent: Date.parse("March 18 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -257,8 +257,8 @@ ja4 = JobApplication.create(
     company_id: avixa.id,
 )
 ja5 = JobApplication.create(
-    communication_type: "#{comm_type[0]}",
-    resume_sent: Date.parse("March 18 2021"),
+    communication_type: "#{comm_type[4]}",
+    resume_sent: Date.parse("March 23 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -270,8 +270,8 @@ ja5 = JobApplication.create(
     company_id: rtslabs.id,
 )
 ja6 = JobApplication.create(
-    communication_type: "#{comm_type[0]}",
-    resume_sent: Date.parse("March 16 2021"),
+    communication_type: "#{comm_type[4]}",
+    resume_sent: Date.parse("March 26 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -283,8 +283,8 @@ ja6 = JobApplication.create(
     company_id: icf.id,
 )
 ja7 = JobApplication.create(
-    communication_type: "#{comm_type[0]}",
-    resume_sent: Date.parse("March 12 2021"),
+    communication_type: "#{comm_type[4]}",
+    resume_sent: Date.parse("March 31 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -296,8 +296,8 @@ ja7 = JobApplication.create(
     company_id: metrostar.id,
 )
 ja8 = JobApplication.create(
-    communication_type: "#{comm_type[0]}",
-    resume_sent: Date.parse("March 10 2021"),
+    communication_type: "#{comm_type[4]}",
+    resume_sent: Date.parse("April 1 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -309,21 +309,21 @@ ja8 = JobApplication.create(
     company_id: ctg.id,
 )
 ja9= JobApplication.create(
-    communication_type: "#{comm_type[0]}",
-    resume_sent: Date.parse("March 8 2021"),
+    communication_type: "#{comm_type[4]}",
+    resume_sent: Date.parse("April 6 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
     notes: "Lots of opportunities",
-    application_name: "#{mantech.name} Entry Level Frontend Developer",
-    applied_location: "#{mantech.name} website",
+    application_name: "#{openbox9.name} Entry Level Frontend Developer",
+    applied_location: "#{openbox9.name} website",
     interest_level: 4,
     user_id: u1.id,
-    company_id: mantech.id,
+    company_id: openbox9.id,
 )
 ja10 = JobApplication.create(
-    communication_type: "#{comm_type[0]}",
-    resume_sent: Date.parse("March 5 2021"),
+    communication_type: "#{comm_type[4]}",
+    resume_sent: Date.parse("April 9 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -335,17 +335,17 @@ ja10 = JobApplication.create(
     company_id: postscript.id,
 )
 ja11 = JobApplication.create(
-    communication_type: "#{comm_type[0]}",
-    resume_sent: Date.parse("March 2 2021"),
+    communication_type: "#{comm_type[4]}",
+    resume_sent: Date.parse("April 13 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
     notes: "Fast growing company with many opportunities for advancement",
-    application_name: "#{wrberkley.name} Entry Level Frontend Engineer",
-    applied_location: "#{wrberkley.name} website",
+    application_name: "#{armedia.name} Entry Level Frontend Engineer",
+    applied_location: "#{armedia.name} website",
     interest_level: 5,
     user_id: u1.id,
-    company_id: wrberkley.id,
+    company_id: armedia.id,
 )
 
 
@@ -402,53 +402,68 @@ f1 = FollowUp.create(
     contact_type: "#{comm_type[0]}",
     job_application_id: ja1.id 
 )
+f1a = FollowUp.create(
+    follow_up_date: Date.parse("April 1 2021"),
+    contact_type: "#{comm_type[0]}",
+    job_application_id: ja1.id 
+)
 f2 = FollowUp.create(
-    follow_up_date: Date.parse("March 29 2021"),
+    follow_up_date: Date.parse("March 19 2021"),
+    contact_type: "#{comm_type[1]}",
+    job_application_id: ja2.id 
+)
+f2a = FollowUp.create(
+    follow_up_date: Date.parse("April 15 2021"),
     contact_type: "#{comm_type[1]}",
     job_application_id: ja2.id 
 )
 f3 = FollowUp.create(
-    follow_up_date: Date.parse("March 25 2021"),
+    follow_up_date: Date.parse("March 22 2021"),
+    contact_type: "#{comm_type[0]}",
+    job_application_id: ja3.id 
+)
+f3a = FollowUp.create(
+    follow_up_date: Date.parse("April 16 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja3.id 
 )
 f4 = FollowUp.create(
-    follow_up_date: Date.parse("April 7 2021"),
+    follow_up_date: Date.parse("March 25 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja4.id 
 )
 f5 = FollowUp.create(
-    follow_up_date: Date.parse("March 25 2021"),
+    follow_up_date: Date.parse("March 30 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja5.id 
 )
 f6 = FollowUp.create(
-    follow_up_date: Date.parse("March 23 2021"),
+    follow_up_date: Date.parse("April 2 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja6.id 
 )
 f7 = FollowUp.create(
-    follow_up_date: Date.parse("March 19 2021"),
+    follow_up_date: Date.parse("April 7 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja7.id 
 )
 f8 = FollowUp.create(
-    follow_up_date: Date.parse("March 17 2021"),
+    follow_up_date: Date.parse("April 8 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja8.id 
 )
 f9 = FollowUp.create(
-    follow_up_date: Date.parse("March 15 2021"),
+    follow_up_date: Date.parse("April 13 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja9.id 
 )
 f10 = FollowUp.create(
-    follow_up_date: Date.parse("March 12 2021"),
+    follow_up_date: Date.parse("April 16 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja10.id 
 )
 f11 = FollowUp.create(
-    follow_up_date: Date.parse("March 9 2021"),
+    follow_up_date: Date.parse("April 20 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja11.id 
 )
@@ -456,23 +471,23 @@ f11 = FollowUp.create(
 
 
 i1 = Interview.create(
-    interview_date: Time.local(2021, "mar", 19, 16, 0, 0),
-    information: "#{comm_type[2]} interview at 4pm with #{c1.first_name}(HR). #{c1.first_name} will send the call info",
+    interview_date: Time.local(2021, "mar", 23, 16, 0, 0),
+    information: "#{comm_type[2]} interview with #{c1.first_name}(HR). #{c1.first_name} will send the call info",
     job_application_id: ja1.id 
 )
 i2 = Interview.create(
-    interview_date: Time.local(2021, "apr", 5, 10, 0, 0), 
+    interview_date: Time.local(2021, "apr", 8, 9, 0, 0), 
     information: "First interview with #{c2.first_name}",
     job_application_id: ja2.id 
 )
 i3 = Interview.create(
-    interview_date: Time.local(2021, "mar", 30, 9, 0, 0), 
-    information: "Interview with #{c3.first_name} on the phone.",
+    interview_date: Time.local(2021, "apr", 9, 11, 0, 0), 
+    information: "Interview with #{c3.first_name} on the #{comm_type[2]}.",
     job_application_id: ja3.id 
 )
 i4 = Interview.create(
-    interview_date: Time.local(2021, "apr", 9, 14, 0, 0), 
-    information: "Initial phone interview with #{c4.first_name}.",
+    interview_date: Time.local(2021, "apr", 19, 14, 0, 0), 
+    information: "Initial #{comm_type[1]} interview with #{c4.first_name}.",
     job_application_id: ja4.id 
 )
 
