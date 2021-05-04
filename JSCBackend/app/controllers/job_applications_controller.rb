@@ -30,10 +30,10 @@ class JobApplicationsController < ApplicationController
             state: params[:state], 
             zipcode: params[:zipcode],
         )
-
         job_application = JobApplication.create(
             communication_type: params[:communication_type], 
             resume_sent: Date.parse(params[:resume_sent]), # params: "2020-12-10T14:00:00.000Z"
+            status: params[:status],
             # resume: params[:resume], 
             # cover_letter: params[:cover_letter], 
             notes: params[:notes], 
