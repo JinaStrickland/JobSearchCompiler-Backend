@@ -30,10 +30,13 @@ class JobApplicationsController < ApplicationController
             state: params[:state], 
             zipcode: params[:zipcode],
         )
+        # byebug
         job_application = JobApplication.create(
             communication_type: params[:communication_type], 
             resume_sent: Date.parse(params[:resume_sent]), # params: "2020-12-10T14:00:00.000Z"
             status: params[:status], 
+            resume: "", 
+            cover_letter: "", 
             # resume: params[:resume], 
             # cover_letter: params[:cover_letter], 
             notes: params[:notes], 
@@ -97,8 +100,33 @@ class JobApplicationsController < ApplicationController
         @job_application = JobApplication.find(params[:id])
     end
 
+    # def job_application_params
+    #     params.require(:job_application).permit(:communication_type, :resume_sent, :status, :resume, :cover_letter, :notes, :applied_location, :application_name, :interest_level, :user_id, :company_id)
+    # end
     def job_application_params
+        # byebug 
         params.require(:job_application).permit(:communication_type, :resume_sent, :status, :resume, :cover_letter, :notes, :applied_location, :application_name, :interest_level, :user_id, :company_id)
     end
 
+    # newJA = {"communication_type":"","resume_sent":"2021-05-01T16:16:29.261Z","status":"Sent Resume","notes":"","applied_location":"","application_name":"Google Web dev","interest_level":"","user_id":43,"name":"Google","street_address":"","city":"","state":"","zipcode":"","first_name":"","last_name":"","email":"","title":"","phone":"","follow_up_date":"2021-05-17T16:16:00.000Z","contact_type":""}
+
+
+
+    # def job_application_params
+    #     x = {"communication_type":"","resume_sent":"2021-05-01T16:16:29.261Z","status":"Sent Resume","notes":"","applied_location":"","application_name":"Google Web dev","interest_level":"","user_id":43,"name":"Google","street_address":"","city":"","state":"","zipcode":"","first_name":"","last_name":"","email":"","title":"","phone":"","follow_up_date":"2021-05-17T16:16:00.000Z","contact_type":""}
+    #     x.require(:job_application).permit(:communication_type, :resume_sent, :status, :resume, :cover_letter, :notes, :applied_location, :application_name, :interest_level, :user_id, :company_id)
+    # end
 end
+JobApplication.create({
+    "communication_type":"",
+    "resume_sent":Date.parse("2021-05-01T16:16:29.261Z"),
+    "status":"Sent Resume",
+    "notes":"",
+    "cover_letter":"",
+    "resume":"",
+    "user_id": 1,
+    "applied_location":"",
+    "application_name":"Google Web dev",
+    "interest_level":"",
+    "company_id": 1
+    })
