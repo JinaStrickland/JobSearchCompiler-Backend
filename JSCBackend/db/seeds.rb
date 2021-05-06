@@ -1,4 +1,3 @@
-
 User.destroy_all
 Company.destroy_all
 Contact.destroy_all
@@ -206,7 +205,7 @@ c11 = Contact.create(
 
 ja1 = JobApplication.create(
     communication_type: "#{comm_type[4]}",
-    resume_sent: Date.parse("March 3 2021"),
+    resume_sent: Date.parse("April 1 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[2]}",
@@ -219,7 +218,7 @@ ja1 = JobApplication.create(
 )
 ja2 = JobApplication.create(
     communication_type: "#{comm_type[4]}",
-    resume_sent: Date.parse("March 12 2021"),
+    resume_sent: Date.parse("April 7 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -232,7 +231,7 @@ ja2 = JobApplication.create(
 )
 ja3 = JobApplication.create(
     communication_type: "#{comm_type[4]}",
-    resume_sent: Date.parse("March 15 2021"),
+    resume_sent: Date.parse("April 9 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -245,7 +244,7 @@ ja3 = JobApplication.create(
 )
 ja4 = JobApplication.create(
     communication_type: "#{comm_type[4]}",
-    resume_sent: Date.parse("March 18 2021"),
+    resume_sent: Date.parse("April 12 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -258,7 +257,7 @@ ja4 = JobApplication.create(
 )
 ja5 = JobApplication.create(
     communication_type: "#{comm_type[4]}",
-    resume_sent: Date.parse("March 23 2021"),
+    resume_sent: Date.parse("April 13 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -271,7 +270,7 @@ ja5 = JobApplication.create(
 )
 ja6 = JobApplication.create(
     communication_type: "#{comm_type[4]}",
-    resume_sent: Date.parse("March 26 2021"),
+    resume_sent: Date.parse("April 16 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -284,7 +283,7 @@ ja6 = JobApplication.create(
 )
 ja7 = JobApplication.create(
     communication_type: "#{comm_type[4]}",
-    resume_sent: Date.parse("March 31 2021"),
+    resume_sent: Date.parse("April 19 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -297,7 +296,7 @@ ja7 = JobApplication.create(
 )
 ja8 = JobApplication.create(
     communication_type: "#{comm_type[4]}",
-    resume_sent: Date.parse("April 1 2021"),
+    resume_sent: Date.parse("April 28 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -310,7 +309,7 @@ ja8 = JobApplication.create(
 )
 ja9= JobApplication.create(
     communication_type: "#{comm_type[4]}",
-    resume_sent: Date.parse("April 6 2021"),
+    resume_sent: Date.parse("April 30 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -323,7 +322,7 @@ ja9= JobApplication.create(
 )
 ja10 = JobApplication.create(
     communication_type: "#{comm_type[4]}",
-    resume_sent: Date.parse("April 9 2021"),
+    resume_sent: Date.parse("May 4 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -336,7 +335,7 @@ ja10 = JobApplication.create(
 )
 ja11 = JobApplication.create(
     communication_type: "#{comm_type[4]}",
-    resume_sent: Date.parse("April 13 2021"),
+    resume_sent: Date.parse("May 6 2021"),
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
@@ -398,72 +397,57 @@ jc11 = JobContact.create(
 
 
 f1 = FollowUp.create(
-    follow_up_date: Date.parse("March 10 2021"),
-    contact_type: "#{comm_type[0]}",
-    job_application_id: ja1.id 
-)
-f1a = FollowUp.create(
-    follow_up_date: Date.parse("April 1 2021"),
+    follow_up_date: Date.parse("April 8 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja1.id 
 )
 f2 = FollowUp.create(
-    follow_up_date: Date.parse("March 19 2021"),
-    contact_type: "#{comm_type[1]}",
-    job_application_id: ja2.id 
-)
-f2a = FollowUp.create(
-    follow_up_date: Date.parse("April 15 2021"),
+    follow_up_date: Date.parse("April 14 2021"),
     contact_type: "#{comm_type[1]}",
     job_application_id: ja2.id 
 )
 f3 = FollowUp.create(
-    follow_up_date: Date.parse("March 22 2021"),
-    contact_type: "#{comm_type[0]}",
-    job_application_id: ja3.id 
-)
-f3a = FollowUp.create(
     follow_up_date: Date.parse("April 16 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja3.id 
 )
 f4 = FollowUp.create(
-    follow_up_date: Date.parse("March 25 2021"),
+    follow_up_date: Date.parse("April 19 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja4.id 
 )
 f5 = FollowUp.create(
-    follow_up_date: Date.parse("March 30 2021"),
+    follow_up_date: Date.parse("April 20 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja5.id 
 )
 f6 = FollowUp.create(
-    follow_up_date: Date.parse("April 2 2021"),
+    follow_up_date: Date.parse("April 23 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja6.id 
 )
 f7 = FollowUp.create(
-    follow_up_date: Date.parse("April 7 2021"),
+    follow_up_date: Date.parse("April 26 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja7.id 
 )
 f8 = FollowUp.create(
-    follow_up_date: Date.parse("April 8 2021"),
+    follow_up_date: Date.parse("May 5 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja8.id 
 )
 f9 = FollowUp.create(
-    follow_up_date: Date.parse("April 13 2021"),
+    follow_up_date: Date.parse("May 7 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja9.id 
 )
 f10 = FollowUp.create(
-    follow_up_date: Date.parse("April 16 2021"),
+    follow_up_date: Date.parse("May 11 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja10.id 
 )
 f11 = FollowUp.create(
-    follow_up_date: Date.parse("April 20 2021"),
+    follow_up_date: Date.parse("May 13 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja11.id 
 )
@@ -471,28 +455,23 @@ f11 = FollowUp.create(
 
 
 i1 = Interview.create(
-    interview_date: Time.local(2021, "mar", 23, 16, 0, 0),
+    interview_date: Time.local(2021, "apr", 28, 16, 0, 0),
+    # interview_date: Time.parse("14:00", DateTime.parse("February 8 2021"))
     information: "#{comm_type[2]} interview with #{c1.first_name}(HR). #{c1.first_name} will send the call info",
     job_application_id: ja1.id 
 )
 i2 = Interview.create(
-    interview_date: Time.local(2021, "apr", 8, 9, 0, 0), 
+    interview_date: Time.local(2021, "may", 4, 9, 0, 0), 
     information: "First interview with #{c2.first_name}",
     job_application_id: ja2.id 
 )
 i3 = Interview.create(
-    interview_date: Time.local(2021, "apr", 9, 11, 0, 0), 
+    interview_date: Time.local(2021, "may", 5, 11, 0, 0), 
     information: "Interview with #{c3.first_name} on the #{comm_type[2]}.",
     job_application_id: ja3.id 
 )
 i4 = Interview.create(
-    interview_date: Time.local(2021, "apr", 19, 14, 0, 0), 
+    interview_date: Time.local(2021, "may", 13, 14, 0, 0), 
     information: "Initial #{comm_type[1]} interview with #{c4.first_name}.",
     job_application_id: ja4.id 
 )
-
-# i1 = Interview.create(
-#     interview_date: Time.parse("14:00", DateTime.parse("February 8 2021")),
-#     information: "#{comm_type[2]} interview at 2pm with #{c1.first_name}(HR). #{c1.first_name} will send the call info",
-#     job_application_id: ja1.id 
-# )
