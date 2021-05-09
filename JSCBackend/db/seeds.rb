@@ -53,33 +53,33 @@ forumone = Company.create(
     state: "VA",
     zipcode: 22202
 )
-avixa = Company.create(
-    name: "AVIXA",
-    street_address: "11242 Waples Mill Road #200",
-    city: "Fairfax",
+splunk = Company.create(
+    name: "Splunk",
+    street_address: "7900 Tysons One Pl Suite 1100",
+    city: "McLean",
     state: "VA",
-    zipcode: 22030
+    zipcode: 22102
 )
-rtslabs = Company.create(
-    name: "RTS Labs",
-    street_address: "4951 Lake Brook Drive #225",
-    city: "Glen Allen",
+amazon = Company.create(
+    name: "Amazon",
+    street_address: "12900 Worldgate Drive",
+    city: "Herndon",
     state: "VA",
-    zipcode: 23060
+    zipcode: 20170
 )
-icf = Company.create(
-    name: "ICF",
-    street_address: "530 Gaither Road",
-    city: "Rockville",
-    state: "MD",
-    zipcode: 20850
-)
-metrostar = Company.create(
-    name: "Metro Star Systems",
-    street_address: "1856 Old Reston Ave #100",
+google = Company.create(
+    name: "Google",
+    street_address: "1901 Reston Metro Plaza",
     city: "Reston",
     state: "VA",
     zipcode: 20190
+)
+cvent = Company.create(
+    name: "Cvent",
+    street_address: "1765 Greensboro Station Pl 7th Floor",
+    city: "McLean",
+    state: "VA",
+    zipcode: 22012
 )
 ctg = Company.create(
     name: "Capital Technology Group(CTG)",
@@ -88,19 +88,12 @@ ctg = Company.create(
     state: "MD",
     zipcode: 20902
 )
-openbox9 = Company.create(
-    name: "Openbox9",
-    street_address: "3805 12th Street, NE",
+flatiron = Company.create(
+    name: "Flatiron",
+    street_address: "1440 G Street, NW",
     city: "Washington",
     state: "DC",
-    zipcode: 20017
-)
-postscript = Company.create(
-    name: "Postscript",
-    street_address: "2413 California Street",
-    city: "San Francisco",
-    state: "CA",
-    zipcode: 94115
+    zipcode: 20005
 )
 armedia = Company.create(
     name: "Armedia",
@@ -142,7 +135,7 @@ c4 = Contact.create(
     email: "rebecca@email.com",
     title: "Sr Recruiter",
     phone: "703-777-3333",
-    company_id: avixa.id
+    company_id: splunk.id
 )
 c5 = Contact.create(
     first_name: "John",
@@ -150,7 +143,7 @@ c5 = Contact.create(
     email: "john@email.com",
     title: "Recruiter",
     phone: "703-213-1212",
-    company_id: rtslabs.id
+    company_id: amazon.id
 )
 c6 = Contact.create(
     first_name: "Larry",
@@ -158,7 +151,7 @@ c6 = Contact.create(
     email: "larry@email.com",
     title: "HR Director",
     phone: "240-221-1111",
-    company_id: icf.id
+    company_id: google.id
 )
 c7 = Contact.create(
     first_name: "Olive",
@@ -166,7 +159,7 @@ c7 = Contact.create(
     email: "olive@email.com",
     title: "Sr HR Manager",
     phone: "703-859-2828",
-    company_id: metrostar.id
+    company_id: cvent.id
 )
 c8 = Contact.create(
     first_name: "David",
@@ -182,17 +175,9 @@ c9 = Contact.create(
     email: "leo@email.com",
     title: "HR Manager",
     phone: "202-589-9000",
-    company_id: openbox9.id
+    company_id: flatiron.id
 )
 c10 = Contact.create(
-    first_name: "Catherine",
-    last_name: "Leet",
-    email: "catherine@email.com",
-    title: "CTO",
-    phone: "703-425-6777",
-    company_id: postscript.id
-)
-c11 = Contact.create(
     first_name: "Jack",
     last_name: "Clark",
     email: "jack@email.com",
@@ -209,7 +194,7 @@ ja1 = JobApplication.create(
     resume: "",
     cover_letter: "",
     status: "#{status[2]}",
-    notes: "The type of work they do seem very interesting",
+    notes: "The type of work they do is very interesting",
     application_name: "#{triblio.name} Software Developer",
     applied_location: "#{triblio.name} website",
     interest_level: 5,
@@ -248,12 +233,12 @@ ja4 = JobApplication.create(
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
-    notes: "#{c4.first_name} contacted me for Frontend Developer position in DC and in Arlington. Found me through LinkedIn.",
-    application_name: "#{avixa.name} Frontend Developer",
-    applied_location: "Email it to #{avixa.name} directly",
+    notes: "React and TypeScript",
+    application_name: "#{splunk.name} Frontend Developer",
+    applied_location: "Referral Link at #{splunk.name}",
     interest_level: 4,
     user_id: u1.id,
-    company_id: avixa.id,
+    company_id: splunk.id,
 )
 ja5 = JobApplication.create(
     communication_type: "#{comm_type[4]}",
@@ -262,11 +247,11 @@ ja5 = JobApplication.create(
     cover_letter: "",
     status: "#{status[0]}",
     notes: "Asking for least 2 year of expereince.  Need to impress them with my soft skills.",
-    application_name: "#{rtslabs.name} Jr Web Developer",
-    applied_location: "#{rtslabs.name} website",
+    application_name: "#{amazon.name} Jr Web Developer",
+    applied_location: "#{amazon.name} website",
     interest_level: 4,
     user_id: u1.id,
-    company_id: rtslabs.id,
+    company_id: amazon.id,
 )
 ja6 = JobApplication.create(
     communication_type: "#{comm_type[4]}",
@@ -275,11 +260,11 @@ ja6 = JobApplication.create(
     cover_letter: "",
     status: "#{status[0]}",
     notes: "Fit the skill requirement",
-    application_name: "#{icf.name} Frontend engineer",
-    applied_location: "#{icf.name} website",
+    application_name: "#{google.name} Frontend engineer",
+    applied_location: "#{google.name} website",
     interest_level: 4,
     user_id: u1.id,
-    company_id: icf.id,
+    company_id: google.id,
 )
 ja7 = JobApplication.create(
     communication_type: "#{comm_type[4]}",
@@ -287,12 +272,12 @@ ja7 = JobApplication.create(
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
-    notes: "Fit the skill requirement",
-    application_name: "#{metrostar.name} Frontend Web Developer",
-    applied_location: "#{metrostar.name} website",
+    notes: "Seems like a great place to work",
+    application_name: "#{cvent.name} Frontend Web Developer",
+    applied_location: "#{cvent.name} website",
     interest_level: 4,
     user_id: u1.id,
-    company_id: metrostar.id,
+    company_id: cvent.id,
 )
 ja8 = JobApplication.create(
     communication_type: "#{comm_type[4]}",
@@ -313,27 +298,14 @@ ja9= JobApplication.create(
     resume: "",
     cover_letter: "",
     status: "#{status[0]}",
-    notes: "Lots of opportunities",
-    application_name: "#{openbox9.name} Entry Level Frontend Developer",
-    applied_location: "#{openbox9.name} website",
+    notes: "Coaching students",
+    application_name: "#{flatiron.name} SE Coach",
+    applied_location: "#{flatiron.name} website",
     interest_level: 4,
     user_id: u1.id,
-    company_id: openbox9.id,
+    company_id: flatiron.id,
 )
 ja10 = JobApplication.create(
-    communication_type: "#{comm_type[4]}",
-    resume_sent: Date.parse("May 4 2021"),
-    resume: "",
-    cover_letter: "",
-    status: "#{status[0]}",
-    notes: "Fit all the skills listed on the application",
-    application_name: "#{postscript.name} Frontend Engineer",
-    applied_location: "#{postscript.name} website",
-    interest_level: 4,
-    user_id: u1.id,
-    company_id: postscript.id,
-)
-ja11 = JobApplication.create(
     communication_type: "#{comm_type[4]}",
     resume_sent: Date.parse("May 6 2021"),
     resume: "",
@@ -389,10 +361,7 @@ jc10 = JobContact.create(
     job_application_id: ja10.id,
     contact_id: c10.id
 )
-jc11 = JobContact.create(
-    job_application_id: ja11.id,
-    contact_id: c11.id
-)
+
 
 
 
@@ -417,40 +386,36 @@ f4 = FollowUp.create(
     job_application_id: ja4.id 
 )
 f5 = FollowUp.create(
-    follow_up_date: Date.parse("April 20 2021"),
+    follow_up_date: Date.parse("April 23 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja5.id 
 )
 f6 = FollowUp.create(
-    follow_up_date: Date.parse("April 23 2021"),
+    follow_up_date: Date.parse("April 27 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja6.id 
 )
 f7 = FollowUp.create(
-    follow_up_date: Date.parse("April 26 2021"),
+    follow_up_date: Date.parse("May 5 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja7.id 
 )
 f8 = FollowUp.create(
-    follow_up_date: Date.parse("May 5 2021"),
+    follow_up_date: Date.parse("May 7 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja8.id 
 )
 f9 = FollowUp.create(
-    follow_up_date: Date.parse("May 7 2021"),
+    follow_up_date: Date.parse("May 11 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja9.id 
 )
 f10 = FollowUp.create(
-    follow_up_date: Date.parse("May 11 2021"),
+    follow_up_date: Date.parse("May 13 2021"),
     contact_type: "#{comm_type[0]}",
     job_application_id: ja10.id 
 )
-f11 = FollowUp.create(
-    follow_up_date: Date.parse("May 13 2021"),
-    contact_type: "#{comm_type[0]}",
-    job_application_id: ja11.id 
-)
+
 
 
 
@@ -462,11 +427,11 @@ i1 = Interview.create(
 )
 i2 = Interview.create(
     interview_date: Time.local(2021, "may", 4, 9, 0, 0), 
-    information: "First interview with #{c2.first_name}",
+    information: "Interview with #{c2.first_name}",
     job_application_id: ja2.id 
 )
 i3 = Interview.create(
-    interview_date: Time.local(2021, "may", 5, 11, 0, 0), 
+    interview_date: Time.local(2021, "may", 6, 11, 0, 0), 
     information: "Interview with #{c3.first_name} on the #{comm_type[2]}.",
     job_application_id: ja3.id 
 )

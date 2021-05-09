@@ -32,6 +32,7 @@ class JobApplicationsController < ApplicationController
         )
         job_application = JobApplication.create(
             communication_type: params[:communication_type], 
+            # byebug 
             resume_sent: Date.parse(params[:resume_sent]), # params: "2020-12-10T14:00:00.000Z"
             status: params[:status],
             # resume: params[:resume], 
